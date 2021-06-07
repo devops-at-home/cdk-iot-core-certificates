@@ -6,7 +6,7 @@ const project = new AwsCdkConstructLibrary({
   defaultReleaseBranch: 'main',
   name: 'cdk-iot-core-certificates',
   repositoryUrl: 'git@github.com:devops-at-home/cdk-iot-core-certificates.git',
-  license: "MIT",
+  license: 'MIT',
   dependabot: true,
 
   gitignore: ['.idea'],
