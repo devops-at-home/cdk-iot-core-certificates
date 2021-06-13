@@ -9,8 +9,25 @@ const project = new AwsCdkConstructLibrary({
   license: 'MIT',
   dependabot: true,
 
-  gitignore: ['.idea'],
+  gitignore: ['.idea', '.DS_Store'],
   releaseToNpm: true,
+
+  deps: [
+    '@aws-cdk/aws-iam',
+    '@aws-cdk/aws-lambda',
+    '@aws-cdk/aws-lambda-nodejs',
+    '@aws-cdk/custom-resources',
+    '@aws-cdk/aws-logs',
+    '@aws-cdk/aws-ssm',
+    '@aws-cdk/aws-cloudformation',
+    'aws-lambda',
+    'aws-sdk'
+  ],
+
+  devDeps: [
+    'esbuild',
+    '@types/aws-lambda'
+  ]
 
   // cdkDependencies: undefined,        /* Which AWS CDK modules (those that start with "@aws-cdk/") does this library require when consumed? */
   // cdkTestDependencies: undefined,    /* AWS CDK modules required for testing. */
