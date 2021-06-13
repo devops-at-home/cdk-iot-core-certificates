@@ -27,7 +27,13 @@ const project = new AwsCdkConstructLibrary({
   devDeps: [
     'esbuild',
     '@types/aws-lambda'
-  ]
+  ],
+
+  jestOptions: {
+    jestConfig: {
+      testPathIgnorePatterns: ['.idea']
+    }
+  }
 
   // cdkDependencies: undefined,        /* Which AWS CDK modules (those that start with "@aws-cdk/") does this library require when consumed? */
   // cdkTestDependencies: undefined,    /* AWS CDK modules required for testing. */
