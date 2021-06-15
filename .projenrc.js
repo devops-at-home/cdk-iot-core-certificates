@@ -25,6 +25,10 @@ const project = new AwsCdkConstructLibrary({
     'aws-sdk',
   ],
 
+  peerDeps: [
+    '@aws-cdk/aws-cloudformation',
+  ],
+
   devDeps: [
     'esbuild',
     '@types/aws-lambda',
