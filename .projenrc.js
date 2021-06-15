@@ -13,6 +13,11 @@ const project = new AwsCdkConstructLibrary({
   releaseToNpm: true,
 
   deps: [
+    'aws-lambda',
+    'aws-sdk',
+  ],
+
+  cdkDependencies: [
     '@aws-cdk/core',
     '@aws-cdk/aws-iam',
     '@aws-cdk/aws-lambda',
@@ -20,12 +25,6 @@ const project = new AwsCdkConstructLibrary({
     '@aws-cdk/custom-resources',
     '@aws-cdk/aws-logs',
     '@aws-cdk/aws-ssm',
-    '@aws-cdk/aws-cloudformation',
-    'aws-lambda',
-    'aws-sdk',
-  ],
-
-  peerDeps: [
     '@aws-cdk/aws-cloudformation',
   ],
 

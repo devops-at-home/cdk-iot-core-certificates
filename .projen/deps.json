@@ -100,6 +100,42 @@
     },
     {
       "name": "@aws-cdk/aws-cloudformation",
+      "version": "^1.108.1",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-iam",
+      "version": "^1.108.1",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-lambda-nodejs",
+      "version": "^1.108.1",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-lambda",
+      "version": "^1.108.1",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-logs",
+      "version": "^1.108.1",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/aws-ssm",
+      "version": "^1.108.1",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/core",
+      "version": "^1.108.1",
+      "type": "peer"
+    },
+    {
+      "name": "@aws-cdk/custom-resources",
+      "version": "^1.108.1",
       "type": "peer"
     },
     {
@@ -109,34 +145,42 @@
     },
     {
       "name": "@aws-cdk/aws-cloudformation",
+      "version": "^1.108.1",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-iam",
-      "type": "runtime"
-    },
-    {
-      "name": "@aws-cdk/aws-lambda",
+      "version": "^1.108.1",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-lambda-nodejs",
+      "version": "^1.108.1",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/aws-lambda",
+      "version": "^1.108.1",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-logs",
+      "version": "^1.108.1",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-ssm",
+      "version": "^1.108.1",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/core",
+      "version": "^1.108.1",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/custom-resources",
+      "version": "^1.108.1",
       "type": "runtime"
     },
     {
