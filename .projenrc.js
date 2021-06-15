@@ -17,6 +17,11 @@ const project = new AwsCdkConstructLibrary({
     'aws-sdk',
   ],
 
+  peerDeps: [
+    'aws-lambda',
+    'aws-sdk',
+  ],
+
   cdkDependencies: [
     '@aws-cdk/core',
     '@aws-cdk/aws-iam',

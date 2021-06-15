@@ -63,6 +63,8 @@
     "@aws-cdk/aws-ssm": "^1.108.1",
     "@aws-cdk/core": "^1.108.1",
     "@aws-cdk/custom-resources": "^1.108.1",
+    "aws-lambda": "^1.0.6",
+    "aws-sdk": "^2.928.0",
     "constructs": "^3.2.27"
   },
   "dependencies": {
