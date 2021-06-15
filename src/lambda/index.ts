@@ -1,10 +1,12 @@
 import * as lambda from "aws-lambda";
+import { Iot } from "aws-sdk";
 import { thingAdaptor } from "../lambda/adapters/thing";
+import { iotAdaptor } from "../lambda/adapters/iot";
 
 type Success = lambda.CloudFormationCustomResourceSuccessResponse;
 type Failure = lambda.CloudFormationCustomResourceFailedResponse;
 
-const thingHandler = thingAdaptor();
+const thingHandler = thingAdaptor(iotAdaptor(new Iot()));
 
 export const handler = async (
   event: lambda.CloudFormationCustomResourceEvent

@@ -1,26 +1,24 @@
 import { ThingPort } from "../ports/thing";
-import { iotAdaptor } from "./iot";
+import { IotPort } from "../ports/iot";
 
-const iot = iotAdaptor();
-
-export const thingAdaptor = (): ThingPort => {
+export const thingAdaptor = (iotAdaptor: IotPort): ThingPort => {
   return {
     create: async (thingName) => {
-      const { thingArn } = await iot.createThing({
+      const { thingArn } = await iotAdaptor.createThing({
         thingName: thingName,
       });
       console.log(`Thing created with ARN: ${thingArn}`);
       const { certificateId, certificateArn, certificatePem, keyPair } =
-        await iot.createKeysAndCertificates();
+        await iotAdaptor.createKeysAndCertificates();
       const { PrivateKey } = keyPair!;
-      const { policyArn } = await iot.createPolicy(thingName);
+      const { policyArn } = await iotAdaptor.createPolicy(thingName);
       console.log(`Policy created with ARN: ${policyArn}`);
-      await iot.attachPrincipalPolicy({
+      await iotAdaptor.attachPrincipalPolicy({
         policyName: thingName,
         principal: certificateArn!,
       });
       console.log("Policy attached to certificate");
-      await iot.attachThingPrincipal({
+      await iotAdaptor.attachThingPrincipal({
         principal: certificateArn!,
         thingName: thingName,
       });
@@ -33,27 +31,27 @@ export const thingAdaptor = (): ThingPort => {
       };
     },
     delete: async (thingName) => {
-      const { principals } = await iot.listThingPrincipals(thingName);
+      const { principals } = await iotAdaptor.listThingPrincipals(thingName);
       for await (const certificateArn of principals!) {
-        await iot.detachPrincipalPolicy({
+        await iotAdaptor.detachPrincipalPolicy({
           policyName: thingName,
           principal: certificateArn,
         });
         console.log(`Policy detached from certificate for ${thingName}`);
-        await iot.detachThingPrincipal({
+        await iotAdaptor.detachThingPrincipal({
           principal: certificateArn,
           thingName: thingName,
         });
         console.log(`Certificate detached from thing for ${certificateArn}`);
-        await iot.updateCertificateToInactive(certificateArn);
+        await iotAdaptor.updateCertificateToInactive(certificateArn);
         console.log(`Certificate marked as inactive for ${certificateArn}`);
 
-        await iot.deleteCertificate(certificateArn);
+        await iotAdaptor.deleteCertificate(certificateArn);
         console.log(`Certificate deleted from thing for ${certificateArn}`);
-        await iot.deleteThing(thingName);
+        await iotAdaptor.deleteThing(thingName);
         console.log(`Thing deleted with name: ${thingName}`);
       }
-      await iot.deletePolicy(thingName);
+      await iotAdaptor.deletePolicy(thingName);
       console.log(`Policy deleted: ${thingName}`);
     },
   };

@@ -1,9 +1,7 @@
 import { Iot } from "aws-sdk";
 import { IotPort } from "../ports/iot";
 
-const iot = new Iot();
-
-export const iotAdaptor = (): IotPort => {
+export const iotAdaptor = (iot: Iot): IotPort => {
   return {
     createThing: async (thingRequest) => {
       return await iot.createThing(thingRequest).promise();
@@ -74,7 +72,7 @@ export const iotAdaptor = (): IotPort => {
   };
 };
 
-const getCertIdFromARN = (arn: string) => {
+export const getCertIdFromARN = (arn: string) => {
   return arn.split("/")[1];
 };
 
