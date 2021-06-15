@@ -30,7 +30,7 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.108.1",
+    "@aws-cdk/assert": "^1.108.1",
     "@types/aws-lambda": "^8.10.77",
     "@types/jest": "^26.0.23",
     "@types/node": "^10.17.0",
