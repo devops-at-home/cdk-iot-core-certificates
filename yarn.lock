@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@aws-cdk/assert@^1.108.1":
+"@aws-cdk/assert@1.108.1":
   version "1.108.1"
   resolved "https://registry.yarnpkg.com/@aws-cdk/assert/-/assert-1.108.1.tgz#ce205d917e48c47b568b7942db5bf749e06bd5f1"
   integrity sha512-dAeoc04S5HpHzYeyVCg15AWW+jwe+LBD7OkRxz7Nsrg+ZpsFbXWhNON9Fvtzsef7G1ztKIBAFreD/jy7zrPSMA==
