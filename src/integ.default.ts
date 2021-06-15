@@ -18,6 +18,7 @@ export class IntegTesting {
 
     new ThingWithCert(stack, 'ThingWithCert', {
       deviceName: 'deviceName',
+      saveToParamStore: true,
     });
 
     this.stack = [stack];

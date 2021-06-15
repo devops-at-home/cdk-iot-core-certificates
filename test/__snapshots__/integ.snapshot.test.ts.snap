@@ -452,6 +452,32 @@ Object {
       },
       "Type": "AWS::IAM::Policy",
     },
+    "ThingWithCertparamStoreCertPem15876E53": Object {
+      "Properties": Object {
+        "Name": "undefined/deviceName/certPem",
+        "Type": "String",
+        "Value": Object {
+          "Fn::GetAtt": Array [
+            "ThingWithCertlambdaCustomResource28E12CE8",
+            "certPem",
+          ],
+        },
+      },
+      "Type": "AWS::SSM::Parameter",
+    },
+    "ThingWithCertparamStorePrivKey2E5E90A6": Object {
+      "Properties": Object {
+        "Name": "undefined/deviceName/privKey",
+        "Type": "String",
+        "Value": Object {
+          "Fn::GetAtt": Array [
+            "ThingWithCertlambdaCustomResource28E12CE8",
+            "privKey",
+          ],
+        },
+      },
+      "Type": "AWS::SSM::Parameter",
+    },
   },
 }
 `;
