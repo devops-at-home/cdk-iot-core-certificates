@@ -21,7 +21,7 @@ export class ThingWithCert extends cdk.Construct {
 
     const lambdaExecutionRole = new iam.Role(this, 'LambdaExecutionRole', {
       assumedBy: new iam.CompositePrincipal(
-        new iam.ServicePrincipal('lambda.amazonaws.com')
+        new iam.ServicePrincipal('lambda.amazonaws.com'),
       ),
     });
 
@@ -33,14 +33,14 @@ export class ThingWithCert extends cdk.Construct {
           'logs:CreateLogStream',
           'logs:PutLogEvents',
         ],
-      })
+      }),
     );
 
     lambdaExecutionRole.addToPolicy(
       new iam.PolicyStatement({
         resources: ['*'],
         actions: ['iot:*'],
-      })
+      }),
     );
 
     const lambdaFunction = new NodejsFunction(this, 'lambdaFunction', {
@@ -61,7 +61,7 @@ export class ThingWithCert extends cdk.Construct {
       'lambdaCustomResource',
       {
         serviceToken: lambdaProvider.serviceToken,
-      }
+      },
     );
 
     lambdaCustomResource.addPropertyOverride('ThingName', thingName);
