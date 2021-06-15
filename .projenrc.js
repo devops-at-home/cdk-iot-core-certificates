@@ -1,4 +1,10 @@
 const { AwsCdkConstructLibrary } = require('projen');
+
+const dependencies = [
+  'aws-lambda',
+  'aws-sdk',
+]
+
 const project = new AwsCdkConstructLibrary({
   author: 'DevOps@Home',
   authorAddress: 'devops.at.home@gmail.com',
@@ -12,15 +18,9 @@ const project = new AwsCdkConstructLibrary({
   gitignore: ['.idea', '.DS_Store'],
   releaseToNpm: true,
 
-  deps: [
-    'aws-lambda',
-    'aws-sdk',
-  ],
+  deps: dependencies,
 
-  peerDeps: [
-    'aws-lambda',
-    'aws-sdk',
-  ],
+  peerDeps: dependencies,
 
   cdkDependencies: [
     '@aws-cdk/core',
