@@ -49,7 +49,7 @@ new ThingWithCert(stack, 'ThingWithCert', {
 [aws iot core]: https://aws.amazon.com/iot-core/
 [aws parameter store]: https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html
 [npm]: https://www.npmjs.com/package/cdk-iot-core-certificates
-[docs]: https://awscdk.io/packages/cdk-iot-core-certificates@0.0.3/#/
+[docs]: https://awscdk.io/packages/cdk-iot-core-certificates@0.0.4/#/
 [source]: https://github.com/devops-at-home/cdk-iot-core-certificates
 [release]: https://github.com/devops-at-home/cdk-iot-core-certificates/actions/workflows/release.yml
 [license]: https://github.com/devops-at-home/cdk-iot-core-certificates/blob/main/LICENSE
