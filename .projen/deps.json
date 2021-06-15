@@ -2,7 +2,7 @@
   "dependencies": [
     {
       "name": "@aws-cdk/assert",
-      "version": "^1.107.0",
+      "version": "^1.108.1",
       "type": "build"
     },
     {
@@ -82,7 +82,7 @@
     },
     {
       "name": "projen",
-      "version": "^0.22.3",
+      "version": "^0.22.15",
       "type": "build"
     },
     {
@@ -125,6 +125,10 @@
     },
     {
       "name": "@aws-cdk/aws-ssm",
+      "type": "runtime"
+    },
+    {
+      "name": "@aws-cdk/core",
       "type": "runtime"
     },
     {

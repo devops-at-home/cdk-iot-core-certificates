@@ -1,20 +1,21 @@
-import { Iot } from "aws-sdk";
-import { IotPort } from "../ports/iot";
+import { Iot } from 'aws-sdk';
+import { IotPort } from '../ports/iot';
+import { getCertIdFromARN } from '../util/iot';
 
 export const iotAdaptor = (iot: Iot): IotPort => {
   return {
     createThing: async (thingRequest) => {
-      return await iot.createThing(thingRequest).promise();
+      return iot.createThing(thingRequest).promise();
     },
     createKeysAndCertificates: async () => {
-      return await iot
+      return iot
         .createKeysAndCertificate({
           setAsActive: true,
         })
         .promise();
     },
     createPolicy: async (thingName) => {
-      return await iot
+      return iot
         .createPolicy({
           policyName: thingName,
           policyDocument: policyDoc,
@@ -25,10 +26,10 @@ export const iotAdaptor = (iot: Iot): IotPort => {
       await iot.attachPrincipalPolicy(props).promise();
     },
     attachThingPrincipal: async (props) => {
-      return await iot.attachThingPrincipal(props).promise();
+      return iot.attachThingPrincipal(props).promise();
     },
     listThingPrincipals: async (thingName) => {
-      return await iot
+      return iot
         .listThingPrincipals({
           thingName: thingName,
         })
@@ -38,13 +39,13 @@ export const iotAdaptor = (iot: Iot): IotPort => {
       await iot.detachPrincipalPolicy(props).promise();
     },
     detachThingPrincipal: async (props) => {
-      return await iot.detachThingPrincipal(props).promise();
+      return iot.detachThingPrincipal(props).promise();
     },
     updateCertificateToInactive: async (certArn) => {
       await iot
         .updateCertificate({
           certificateId: getCertIdFromARN(certArn),
-          newStatus: "INACTIVE",
+          newStatus: 'INACTIVE',
         })
         .promise();
     },
@@ -70,10 +71,6 @@ export const iotAdaptor = (iot: Iot): IotPort => {
         .promise();
     },
   };
-};
-
-export const getCertIdFromARN = (arn: string) => {
-  return arn.split("/")[1];
 };
 
 const policyDoc = `{

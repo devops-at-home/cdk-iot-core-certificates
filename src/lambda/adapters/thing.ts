@@ -1,5 +1,5 @@
-import { ThingPort } from "../ports/thing";
-import { IotPort } from "../ports/iot";
+import { IotPort } from '../ports/iot';
+import { ThingPort } from '../ports/thing';
 
 export const thingAdaptor = (iotAdaptor: IotPort): ThingPort => {
   return {
@@ -17,12 +17,12 @@ export const thingAdaptor = (iotAdaptor: IotPort): ThingPort => {
         policyName: thingName,
         principal: certificateArn!,
       });
-      console.log("Policy attached to certificate");
+      console.log('Policy attached to certificate');
       await iotAdaptor.attachThingPrincipal({
         principal: certificateArn!,
         thingName: thingName,
       });
-      console.log("Certificate attached to thing");
+      console.log('Certificate attached to thing');
       return {
         certId: certificateId!,
         certPem: certificatePem!,

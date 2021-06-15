@@ -1,7 +1,7 @@
-import * as lambda from "aws-lambda";
-import { Iot } from "aws-sdk";
-import { thingAdaptor } from "../lambda/adapters/thing";
-import { iotAdaptor } from "../lambda/adapters/iot";
+import * as lambda from 'aws-lambda';
+import { Iot } from 'aws-sdk';
+import { iotAdaptor } from '../lambda/adapters/iot';
+import { thingAdaptor } from '../lambda/adapters/thing';
 
 type Success = lambda.CloudFormationCustomResourceSuccessResponse;
 type Failure = lambda.CloudFormationCustomResourceFailedResponse;
@@ -9,17 +9,17 @@ type Failure = lambda.CloudFormationCustomResourceFailedResponse;
 const thingHandler = thingAdaptor(iotAdaptor(new Iot()));
 
 export const handler = async (
-  event: lambda.CloudFormationCustomResourceEvent
+  event: lambda.CloudFormationCustomResourceEvent,
 ): Promise<Success | Failure> => {
   console.log(`Received event: ${JSON.stringify(event)}`);
   try {
-    const thingName = event.ResourceProperties["ThingName"];
-    if (event.RequestType === "Create") {
+    const thingName = event.ResourceProperties.ThingName;
+    if (event.RequestType === 'Create') {
       const { thingArn, certId, certPem, privKey } = await thingHandler.create(
-        thingName
+        thingName,
       );
       return {
-        Status: "SUCCESS",
+        Status: 'SUCCESS',
         PhysicalResourceId: thingArn,
         LogicalResourceId: event.LogicalResourceId,
         RequestId: event.RequestId,
@@ -30,30 +30,30 @@ export const handler = async (
           certId: certId,
         },
       };
-    } else if (event.RequestType === "Delete") {
+    } else if (event.RequestType === 'Delete') {
       await thingHandler.delete(thingName);
       return {
-        Status: "SUCCESS",
+        Status: 'SUCCESS',
         PhysicalResourceId: event.PhysicalResourceId,
         LogicalResourceId: event.LogicalResourceId,
         RequestId: event.RequestId,
         StackId: event.StackId,
       };
-    } else if (event.RequestType === "Update") {
+    } else if (event.RequestType === 'Update') {
       console.log(`Updating thing: ${thingName}`);
       return {
-        Status: "SUCCESS",
+        Status: 'SUCCESS',
         PhysicalResourceId: event.PhysicalResourceId,
         LogicalResourceId: event.LogicalResourceId,
         RequestId: event.RequestId,
         StackId: event.StackId,
       };
     } else {
-      throw new Error("Received invalid request type");
+      throw new Error('Received invalid request type');
     }
   } catch (err) {
     return {
-      Status: "FAILED",
+      Status: 'FAILED',
       Reason: err.message,
       RequestId: event.RequestId,
       StackId: event.StackId,

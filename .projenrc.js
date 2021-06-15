@@ -2,7 +2,7 @@ const { AwsCdkConstructLibrary } = require('projen');
 const project = new AwsCdkConstructLibrary({
   author: 'DevOps@Home',
   authorAddress: 'devops.at.home@gmail.com',
-  cdkVersion: '1.107.0',
+  cdkVersion: '1.108.1',
   defaultReleaseBranch: 'main',
   name: 'cdk-iot-core-certificates',
   repositoryUrl: 'git@github.com:devops-at-home/cdk-iot-core-certificates.git',
@@ -13,6 +13,7 @@ const project = new AwsCdkConstructLibrary({
   releaseToNpm: true,
 
   deps: [
+    '@aws-cdk/core',
     '@aws-cdk/aws-iam',
     '@aws-cdk/aws-lambda',
     '@aws-cdk/aws-lambda-nodejs',
@@ -21,19 +22,19 @@ const project = new AwsCdkConstructLibrary({
     '@aws-cdk/aws-ssm',
     '@aws-cdk/aws-cloudformation',
     'aws-lambda',
-    'aws-sdk'
+    'aws-sdk',
   ],
 
   devDeps: [
     'esbuild',
-    '@types/aws-lambda'
+    '@types/aws-lambda',
   ],
 
   jestOptions: {
     jestConfig: {
-      testPathIgnorePatterns: ['.idea']
-    }
-  }
+      testPathIgnorePatterns: ['.idea'],
+    },
+  },
 
   // cdkDependencies: undefined,        /* Which AWS CDK modules (those that start with "@aws-cdk/") does this library require when consumed? */
   // cdkTestDependencies: undefined,    /* AWS CDK modules required for testing. */

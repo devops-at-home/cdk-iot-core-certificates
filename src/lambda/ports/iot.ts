@@ -1,4 +1,4 @@
-import * as iot from "aws-sdk/clients/iot";
+import * as iot from 'aws-sdk/clients/iot';
 
 export interface IotPort {
   createThing: (
