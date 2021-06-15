@@ -8,7 +8,7 @@ import * as cdk from '@aws-cdk/core';
 import { Provider } from '@aws-cdk/custom-resources';
 
 export interface ThingWithCertProps {
-  readonly deviceName: string;
+  readonly thingName: string;
   readonly saveToParamStore?: boolean;
   readonly paramPrefix?: string;
 }
@@ -17,11 +17,11 @@ export class ThingWithCert extends cdk.Construct {
   constructor(scope: cdk.Construct, id: string, props: ThingWithCertProps) {
     super(scope, id);
 
-    const { deviceName, saveToParamStore, paramPrefix } = props;
+    const { thingName, saveToParamStore, paramPrefix } = props;
 
     const lambdaExecutionRole = new iam.Role(this, 'LambdaExecutionRole', {
       assumedBy: new iam.CompositePrincipal(
-        new iam.ServicePrincipal('lambda.amazonaws.com'),
+        new iam.ServicePrincipal('lambda.amazonaws.com')
       ),
     });
 
@@ -33,14 +33,14 @@ export class ThingWithCert extends cdk.Construct {
           'logs:CreateLogStream',
           'logs:PutLogEvents',
         ],
-      }),
+      })
     );
 
     lambdaExecutionRole.addToPolicy(
       new iam.PolicyStatement({
         resources: ['*'],
         actions: ['iot:*'],
-      }),
+      })
     );
 
     const lambdaFunction = new NodejsFunction(this, 'lambdaFunction', {
@@ -61,22 +61,22 @@ export class ThingWithCert extends cdk.Construct {
       'lambdaCustomResource',
       {
         serviceToken: lambdaProvider.serviceToken,
-      },
+      }
     );
 
-    lambdaCustomResource.addPropertyOverride('ThingName', deviceName);
+    lambdaCustomResource.addPropertyOverride('ThingName', thingName);
 
     if (saveToParamStore) {
       new ssm.CfnParameter(this, 'paramStoreCertPem', {
         type: 'String',
         value: lambdaCustomResource.getAtt('certPem').toString(),
-        name: `${paramPrefix}/${deviceName}/certPem`,
+        name: `${paramPrefix}/${thingName}/certPem`,
       });
 
       new ssm.CfnParameter(this, 'paramStorePrivKey', {
         type: 'String',
         value: lambdaCustomResource.getAtt('privKey').toString(),
-        name: `${paramPrefix}/${deviceName}/privKey`,
+        name: `${paramPrefix}/${thingName}/privKey`,
       });
     }
 

@@ -17,7 +17,7 @@ export class IntegTesting {
     const stack = new cdk.Stack(app, 'integ-stack', { env });
 
     new ThingWithCert(stack, 'ThingWithCert', {
-      deviceName: 'deviceName',
+      thingName: 'thingName',
       saveToParamStore: true,
     });
 

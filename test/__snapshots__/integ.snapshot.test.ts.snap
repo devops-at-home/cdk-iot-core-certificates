@@ -240,7 +240,7 @@ Object {
             "Arn",
           ],
         },
-        "ThingName": "deviceName",
+        "ThingName": "thingName",
       },
       "Type": "AWS::CloudFormation::CustomResource",
     },
@@ -454,7 +454,7 @@ Object {
     },
     "ThingWithCertparamStoreCertPem15876E53": Object {
       "Properties": Object {
-        "Name": "undefined/deviceName/certPem",
+        "Name": "undefined/thingName/certPem",
         "Type": "String",
         "Value": Object {
           "Fn::GetAtt": Array [
@@ -467,7 +467,7 @@ Object {
     },
     "ThingWithCertparamStorePrivKey2E5E90A6": Object {
       "Properties": Object {
-        "Name": "undefined/deviceName/privKey",
+        "Name": "undefined/thingName/privKey",
         "Type": "String",
         "Value": Object {
           "Fn::GetAtt": Array [

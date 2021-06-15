@@ -35,10 +35,10 @@ For TypeScript/NodeJS, add these to your `dependencies` in `package.json`:
 ```ts
 import { ThingWithCert } from 'cdk-iot-core-certificates';
 
-// Creates new AWS IoT Thing called deviceName
-// Saves certs to /devices/deviceName/certPem and /devices/deviceName/privKey
+// Creates new AWS IoT Thing called thingName
+// Saves certs to /devices/thingName/certPem and /devices/thingName/privKey
 new ThingWithCert(stack, 'ThingWithCert', {
-  deviceName: 'deviceName',
+  thingName: 'thingName',
   saveToParamStore: true,
   paramPrefix: '/devices',
 });
