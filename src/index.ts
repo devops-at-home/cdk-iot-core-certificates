@@ -7,13 +7,17 @@ import * as ssm from '@aws-cdk/aws-ssm';
 import * as cdk from '@aws-cdk/core';
 import { Provider } from '@aws-cdk/custom-resources';
 
-export interface ThingWithCertProps {
+export interface ThingWithCertProps extends cdk.ResourceProps {
   readonly thingName: string;
   readonly saveToParamStore?: boolean;
   readonly paramPrefix?: string;
 }
 
 export class ThingWithCert extends cdk.Construct {
+  public readonly thingArn: string;
+  public readonly certId: string;
+  public readonly certPem: string;
+  public readonly privKey: string;
   constructor(scope: cdk.Construct, id: string, props: ThingWithCertProps) {
     super(scope, id);
 
@@ -21,7 +25,7 @@ export class ThingWithCert extends cdk.Construct {
 
     const lambdaExecutionRole = new iam.Role(this, 'LambdaExecutionRole', {
       assumedBy: new iam.CompositePrincipal(
-        new iam.ServicePrincipal('lambda.amazonaws.com'),
+        new iam.ServicePrincipal('lambda.amazonaws.com')
       ),
     });
 
@@ -33,14 +37,14 @@ export class ThingWithCert extends cdk.Construct {
           'logs:CreateLogStream',
           'logs:PutLogEvents',
         ],
-      }),
+      })
     );
 
     lambdaExecutionRole.addToPolicy(
       new iam.PolicyStatement({
         resources: ['*'],
         actions: ['iot:*'],
-      }),
+      })
     );
 
     const lambdaFunction = new NodejsFunction(this, 'lambdaFunction', {
@@ -61,39 +65,32 @@ export class ThingWithCert extends cdk.Construct {
       'lambdaCustomResource',
       {
         serviceToken: lambdaProvider.serviceToken,
-      },
+      }
     );
 
     lambdaCustomResource.addPropertyOverride('ThingName', thingName);
+
+    let paramStorePath = paramPrefix
+      ? `${paramPrefix}/${thingName}`
+      : thingName;
 
     if (saveToParamStore) {
       new ssm.CfnParameter(this, 'paramStoreCertPem', {
         type: 'String',
         value: lambdaCustomResource.getAtt('certPem').toString(),
-        name: `${paramPrefix}/${thingName}/certPem`,
+        name: `${paramStorePath}/certPem`,
       });
 
       new ssm.CfnParameter(this, 'paramStorePrivKey', {
         type: 'String',
         value: lambdaCustomResource.getAtt('privKey').toString(),
-        name: `${paramPrefix}/${thingName}/privKey`,
+        name: `${paramStorePath}/privKey`,
       });
     }
 
-    new cdk.CfnOutput(this, 'thingArn', {
-      value: lambdaCustomResource.getAtt('thingArn').toString(),
-    });
-
-    new cdk.CfnOutput(this, 'certId', {
-      value: lambdaCustomResource.getAtt('certId').toString(),
-    });
-
-    new cdk.CfnOutput(this, 'certPem', {
-      value: lambdaCustomResource.getAtt('certPem').toString(),
-    });
-
-    new cdk.CfnOutput(this, 'privKey', {
-      value: lambdaCustomResource.getAtt('privKey').toString(),
-    });
+    this.thingArn = lambdaCustomResource.getAtt('thingArn').toString();
+    this.certId = lambdaCustomResource.getAtt('certId').toString();
+    this.certPem = lambdaCustomResource.getAtt('certPem').toString();
+    this.privKey = lambdaCustomResource.getAtt('privKey').toString();
   }
 }
