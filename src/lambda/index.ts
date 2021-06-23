@@ -3,20 +3,22 @@ import { Iot } from 'aws-sdk';
 import { iotAdaptor } from '../lambda/adapters/iot';
 import { thingAdaptor } from '../lambda/adapters/thing';
 
+import { StandardLogger } from 'aws-cloudformation-custom-resource';
+const logger = new StandardLogger();
+
 type Success = lambda.CloudFormationCustomResourceSuccessResponse;
 type Failure = lambda.CloudFormationCustomResourceFailedResponse;
 
 const thingHandler = thingAdaptor(iotAdaptor(new Iot()));
 
 export const handler = async (
-  event: lambda.CloudFormationCustomResourceEvent,
+  event: lambda.CloudFormationCustomResourceEvent
 ): Promise<Success | Failure> => {
-  console.log(`Received event: ${JSON.stringify(event)}`);
   try {
     const thingName = event.ResourceProperties.ThingName;
     if (event.RequestType === 'Create') {
       const { thingArn, certId, certPem, privKey } = await thingHandler.create(
-        thingName,
+        thingName
       );
       return {
         Status: 'SUCCESS',
@@ -40,7 +42,7 @@ export const handler = async (
         StackId: event.StackId,
       };
     } else if (event.RequestType === 'Update') {
-      console.log(`Updating thing: ${thingName}`);
+      logger.info(`Updating thing: ${thingName}`);
       return {
         Status: 'SUCCESS',
         PhysicalResourceId: event.PhysicalResourceId,

@@ -99,6 +99,10 @@
       "type": "build"
     },
     {
+      "name": "aws-cloudformation-custom-resource",
+      "type": "bundled"
+    },
+    {
       "name": "aws-lambda",
       "type": "bundled"
     },
