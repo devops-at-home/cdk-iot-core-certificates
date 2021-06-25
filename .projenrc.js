@@ -12,6 +12,7 @@ const project = new AwsCdkConstructLibrary({
 
   gitignore: ['.idea', '.DS_Store'],
   releaseToNpm: true,
+  mutableBuild: true,
 
   bundledDeps: [
     'aws-lambda',
