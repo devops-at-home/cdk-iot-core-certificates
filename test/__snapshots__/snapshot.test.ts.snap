@@ -20,7 +20,7 @@ Object {
           "S3Bucket": Object {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "e5032a7ed03a7762b99560439c17f58d046a35d40ebf64ba70c63157df388563.zip",
+          "S3Key": "4cd567bf52e0f31674ae9e960efae8855b8b1249fa9997799ae47dc9f80e9ff8.zip",
         },
         "Handler": "index.handler",
         "Role": Object {
@@ -157,7 +157,7 @@ Object {
           "S3Bucket": Object {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "a5630afc5926ce88b06077285993ada90c4cf71bd44f0c0b489a24bc743b37a8.zip",
+          "S3Key": "c5d3cbb77e3a4a5390c85a4867bf4f13cdac86314c061e644981d1554d9b2a3d.zip",
         },
         "Environment": Object {
           "Variables": Object {
@@ -229,7 +229,7 @@ Object {
             "Arn",
           ],
         },
-        "Runtime": "nodejs12.x",
+        "Runtime": "nodejs14.x",
         "Timeout": 900,
       },
       "Type": "AWS::Lambda::Function",

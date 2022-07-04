@@ -1,8 +1,9 @@
 import { awscdk } from 'projen';
+
 const project = new awscdk.AwsCdkConstructLibrary({
   author: 'DevOps@Home',
   authorAddress: 'devops.at.home@gmail.com',
-  cdkVersion: '2.27.0',
+  cdkVersion: '2.30.0',
   defaultReleaseBranch: 'main',
   eslint: false,
   name: 'cdk-iot-core-certificates',
@@ -11,7 +12,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
   license: 'MIT',
   gitignore: ['.idea', '.DS_Store'],
   bundledDeps: ['aws-lambda', 'aws-sdk', 'aws-cloudformation-custom-resource'],
-  devDeps: ['esbuild', '@types/aws-lambda'],
+  devDeps: ['esbuild', '@types/aws-lambda', '@types/jest@27.4.1'],
   prettier: true,
   prettierOptions: {
     settings: {
@@ -19,6 +20,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
       tabWidth: 2,
       singleQuote: true,
     },
+  },
+  githubOptions: {
+    pullRequestLint: false,
   },
 });
 
