@@ -21,6 +21,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
       singleQuote: true,
     },
   },
+  githubOptions: {
+    pullRequestLint: false,
+  },
 });
 
 project.jest!.addTestMatch('**/?(*.)@(spec|test).[tj]s?(x)');
