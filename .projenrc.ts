@@ -30,6 +30,10 @@ const project = new awscdk.AwsCdkConstructLibrary({
   githubOptions: {
     pullRequestLint: false,
   },
+  autoApproveUpgrades: true,
+  autoApproveOptions: {
+    allowedUsernames: ['devops-at-home'],
+  },
 });
 
 project.jest!.addTestMatch('**/?(*.)@(spec|test).[tj]s?(x)');
