@@ -49,7 +49,7 @@
     "jsii-diff": "^1.62.0",
     "jsii-docgen": "^7.0.56",
     "jsii-pacmak": "^1.62.0",
-    "npm-check-updates": "^15",
+    "npm-check-updates": "^12",
     "prettier": "^2.7.1",
     "projen": "^0.59.7",
     "standard-version": "^9",
@@ -70,7 +70,7 @@
   "jest": {
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.ts?(x)",
-      "<rootDir>/(test|src)/**/*(*.)@(spec|test).ts?(x)",
+      "<rootDir>/(test|src)/**/?(*.)+(spec|test).ts?(x)",
       "**/?(*.)@(spec|test).[tj]s?(x)"
     ],
     "clearMocks": true,
