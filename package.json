@@ -37,7 +37,7 @@
     "@types/aws-lambda": "^8.10.101",
     "@types/jest": "^27",
     "@types/node": "^14",
-    "aws-cdk-lib": "2.30.0",
+    "aws-cdk-lib": "2.33.0",
     "aws-cloudformation-custom-resource": "^3.1.0",
     "aws-lambda": "^1.0.7",
     "aws-sdk": "^2.1181.0",
@@ -49,7 +49,7 @@
     "jsii-diff": "^1.62.0",
     "jsii-docgen": "^7.0.56",
     "jsii-pacmak": "^1.62.0",
-    "npm-check-updates": "^12",
+    "npm-check-updates": "^15",
     "prettier": "^2.7.1",
     "projen": "^0.59.7",
     "standard-version": "^9",
@@ -58,7 +58,7 @@
     "typescript": "^4.7.4"
   },
   "peerDependencies": {
-    "aws-cdk-lib": "^2.30.0",
+    "aws-cdk-lib": "^2.33.0",
     "constructs": "^10.0.5"
   },
   "keywords": [
@@ -70,7 +70,7 @@
   "jest": {
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.ts?(x)",
-      "<rootDir>/(test|src)/**/?(*.)+(spec|test).ts?(x)",
+      "<rootDir>/(test|src)/**/*(*.)@(spec|test).ts?(x)",
       "**/?(*.)@(spec|test).[tj]s?(x)"
     ],
     "clearMocks": true,
