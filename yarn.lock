@@ -861,9 +861,9 @@
     "@types/node" "*"
 
 "@types/minimatch@*":
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.5.tgz#1001cc5e6a3704b83c236027e77f2f58ea010f40"
-  integrity sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-5.1.0.tgz#c3018161691376002f8a22ebb87f341e0dba3219"
+  integrity sha512-0RJHq5FqDWo17kdHe+SMDJLfxmLaqHbWnqZ6gNKzDvStUlrmx/eKIY17+ifLS1yybo7X86aUshQMlittDOVNnw==
 
 "@types/minimist@^1.2.0":
   version "1.2.2"
@@ -871,9 +871,9 @@
   integrity sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==
 
 "@types/node@*":
-  version "18.7.11"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.7.11.tgz#486e72cfccde88da24e1f23ff1b7d8bfb64e6250"
-  integrity sha512-KZhFpSLlmK/sdocfSAjqPETTMd0ug6HIMIAwkwUpU79olnZdQtMxpQP+G1wDzCH7na+FltSIhbaZuKdwZ8RDrw==
+  version "18.7.13"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.7.13.tgz#23e6c5168333480d454243378b69e861ab5c011a"
+  integrity sha512-46yIhxSe5xEaJZXWdIBP7GU4HDTG8/eo0qd9atdiL+lFpA03y8KS+lkTN834TWJj5767GbWv4n/P6efyTFt1Dw==
 
 "@types/node@^14":
   version "14.18.26"
@@ -1150,10 +1150,10 @@ aws-lambda@^1.0.7:
     js-yaml "^3.14.1"
     watchpack "^2.0.0-beta.10"
 
-aws-sdk@^2.1201.0, aws-sdk@^2.814.0:
-  version "2.1201.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1201.0.tgz#e3fa4670800b419adf1e1a3a7d7c98a700705a39"
-  integrity sha512-TLlyn9kXHjBidP58Pw1x7VQfIAfvakljyOX6+AEId+KbEXZPN/PzZB2sf0cLAgKIUgTVvWX4RqSTXLDmeR5c8Q==
+aws-sdk@^2.1202.0, aws-sdk@^2.814.0:
+  version "2.1202.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1202.0.tgz#5a8349d02d2092477e2a9b621c00e96eaf49cbf3"
+  integrity sha512-fFoEX+Id8/h/RIHw/gTZl3GnFF+RaXRmXueF7qCOqHm4g7mFOOgUUbc4BLbZ4gCDYRiyxNlGgija/je8EhLNRw==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -2026,9 +2026,9 @@ eastasianwidth@^0.2.0:
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
 electron-to-chromium@^1.4.202:
-  version "1.4.228"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.228.tgz#3baff13cf54198c2045f9bdd8b64db93aafd7f33"
-  integrity sha512-XfDHCvou7CsDMlFwb0WZ1tWmW48e7Sn7VBRyPfZsZZila9esRsJl1trO+OqDNV97GggFSt0ISbWslKXfQkG//g==
+  version "1.4.229"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.229.tgz#506107e357a59e3241f69cdd1a179626164ddd86"
+  integrity sha512-kdye32s/padLGpiLzhrMraBBs/M5hDspB8PCdCP6L11AJ6dw3Gg3xdvT4b4pqWaW5tc5oAwCfKCS+PAsZM3ipw==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -3738,10 +3738,10 @@ jsii-diff@^1.65.0:
     log4js "^6.6.1"
     yargs "^16.2.0"
 
-jsii-docgen@^7.0.72:
-  version "7.0.72"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.72.tgz#e3b54d8acac2558d358185b4dffdf40cb0c7aeaf"
-  integrity sha512-sMYfT2bD7tL16RVoK082XxkdxpEZCyMUCwNcAuYix7rU/GcOqCOzUBqxGVUWImJakRBPqMph1rwcIHziPDAX9A==
+jsii-docgen@^7.0.73:
+  version "7.0.73"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.73.tgz#29e9db70dd205b1c931f0dea853c61c82785f68a"
+  integrity sha512-wX7Pcuc75luG889z5aXxzVmzYZ+XPOUscR+NfsWds82GPdgeWoHAl2ejawvndT2mvxa5livYEsb6XGQMU7wgTQ==
   dependencies:
     "@jsii/spec" "^1.65.0"
     case "^1.6.3"
@@ -4757,10 +4757,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.61.27:
-  version "0.61.27"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.61.27.tgz#4f278c80bb2b65d795d1d81669fe3f235b268fe1"
-  integrity sha512-Ce+v1OqC1XQq6UCOX9QPhs7gM7lJvYF577fBFCwdL5LFmFzfEpK4yM/F3WQRslw8071oYtu7wPrBA1OkZnyGsA==
+projen@^0.61.28:
+  version "0.61.28"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.61.28.tgz#025d56c890ea4361da4da0c1b8fde60197e8dc95"
+  integrity sha512-sqtfn6AJ8URqBvUSYEIyMr2T2sQvewQsYSCrJUw+DjEMxUImwY+N01gYNiBdG/q78siN2x3PkcOvgxFn5rRklg==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
@@ -5600,9 +5600,9 @@ to-regex-range@^5.0.1:
     is-number "^7.0.0"
 
 tough-cookie@^4.0.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-4.1.0.tgz#039b203b2ad95cd9d2a2aae07b238cb83adc46c7"
-  integrity sha512-IVX6AagLelGwl6F0E+hoRpXzuD192cZhAcmT7/eoLr0PnsB1wv2E5c+A2O+V8xth9FlL2p0OstFsWn0bZpVn4w==
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-4.1.1.tgz#3600960f1e1c83545f130ac80043b9de8e5d488b"
+  integrity sha512-Ns3k8QxkEzIfLZbRwLOrMPDqRa1BEAl4BzNNAOYY4BhBmEkf+HvP467F4NrD9loK3NcYflWOpUH3LJg0ehq/rQ==
   dependencies:
     psl "^1.1.33"
     punycode "^2.1.1"
