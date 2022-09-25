@@ -1,0 +1,19 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    ".gitattributes": true,
+    ".npmignore": true,
+    ".projen": true,
+    "cdk.out": true,
+    "coverage": true,
+    "node_modules": true,
+    "test-reports": true,
+    ".mergify.yml": true,
+    ".prettier*": true,
+    "tsconfig*.json": true
+  }
+}
