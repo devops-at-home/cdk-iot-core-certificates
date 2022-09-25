@@ -3,17 +3,17 @@ import { Template } from 'aws-cdk-lib/assertions';
 import { ThingWithCert } from '../src';
 
 describe('Snapshot test', () => {
-  const stack = new Stack();
+    const stack = new Stack();
 
-  new ThingWithCert(stack, 'ThingWithCert', {
-    thingName: 'thingName',
-    saveToParamStore: true,
-    paramPrefix: 'paramPrefix',
-  });
+    new ThingWithCert(stack, 'ThingWithCert', {
+        thingName: 'thingName',
+        saveToParamStore: true,
+        paramPrefix: 'paramPrefix',
+    });
 
-  const template = Template.fromStack(stack);
+    const template = Template.fromStack(stack);
 
-  test('Snapshot test', () => {
-    expect(template.toJSON()).toMatchSnapshot();
-  });
+    test('Snapshot test', () => {
+        expect(template.toJSON()).toMatchSnapshot();
+    });
 });
