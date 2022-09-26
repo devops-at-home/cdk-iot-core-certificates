@@ -1,17 +1,15 @@
-import { StandardLogger } from 'aws-cloudformation-custom-resource';
-import * as lambda from 'aws-lambda';
-import { Iot } from 'aws-sdk';
+import {
+    CloudFormationCustomResourceSuccessResponse as Success,
+    CloudFormationCustomResourceFailedResponse as Failure,
+    CloudFormationCustomResourceEvent as Event,
+} from 'aws-lambda';
+import { AWSError, Iot } from 'aws-sdk';
 import { iotAdaptor } from './adapters/iot';
 import { thingAdaptor } from './adapters/thing';
 
-const logger = new StandardLogger();
-
-type Success = lambda.CloudFormationCustomResourceSuccessResponse;
-type Failure = lambda.CloudFormationCustomResourceFailedResponse;
-
 const thingHandler = thingAdaptor(iotAdaptor(new Iot()));
 
-export const handler = async (event: lambda.CloudFormationCustomResourceEvent): Promise<Success | Failure> => {
+export const handler = async (event: Event): Promise<Success | Failure> => {
     const { RequestType, LogicalResourceId, RequestId, StackId } = event;
 
     try {
@@ -42,7 +40,6 @@ export const handler = async (event: lambda.CloudFormationCustomResourceEvent): 
                 StackId,
             };
         } else if (event.RequestType === 'Update') {
-            logger.info(`Updating thing: ${thingName}`);
             return {
                 Status: 'SUCCESS',
                 PhysicalResourceId: event.PhysicalResourceId,
@@ -54,9 +51,11 @@ export const handler = async (event: lambda.CloudFormationCustomResourceEvent): 
             throw new Error('Received invalid request type');
         }
     } catch (err) {
+        const Reason = (err as AWSError).message;
+
         return {
             Status: 'FAILED',
-            Reason: err.message,
+            Reason,
             RequestId,
             StackId,
             LogicalResourceId,

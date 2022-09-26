@@ -24,18 +24,18 @@ export class ThingWithCert extends Construct {
 
         const { thingName, saveToParamStore, paramPrefix } = props;
 
-        const lambdaExecutionRole = new Role(this, 'LambdaExecutionRole', {
+        const role = new Role(this, 'LambdaExecutionRole', {
             assumedBy: new CompositePrincipal(new ServicePrincipal('lambda.amazonaws.com')),
         });
 
-        lambdaExecutionRole.addToPolicy(
+        role.addToPolicy(
             new PolicyStatement({
                 resources: ['arn:aws:logs:*:*:*'],
                 actions: ['logs:CreateLogGroup', 'logs:CreateLogStream', 'logs:PutLogEvents'],
             })
         );
 
-        lambdaExecutionRole.addToPolicy(
+        role.addToPolicy(
             new PolicyStatement({
                 resources: ['*'],
                 actions: ['iot:*'],
@@ -46,7 +46,7 @@ export class ThingWithCert extends Construct {
             entry: join(__dirname, 'lambda', 'index.js'),
             handler: 'handler',
             timeout: Duration.seconds(10),
-            role: lambdaExecutionRole,
+            role,
             logRetention: RetentionDays.ONE_DAY,
         });
 
