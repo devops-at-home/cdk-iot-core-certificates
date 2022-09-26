@@ -12,7 +12,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     license: 'MIT',
     gitignore: ['.idea'],
     devDeps: ['esbuild', '@types/aws-lambda', 'aws-sdk'],
-    deps: ['aws-cloudformation-custom-resource', 'aws-lambda'],
+    bundledDeps: ['aws-cloudformation-custom-resource', 'aws-lambda'],
     prettier: true,
     prettierOptions: {
         settings: {
