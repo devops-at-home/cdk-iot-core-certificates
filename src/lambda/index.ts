@@ -1,8 +1,8 @@
 import { StandardLogger } from 'aws-cloudformation-custom-resource';
 import * as lambda from 'aws-lambda';
 import { Iot } from 'aws-sdk';
-import { iotAdaptor } from '../lambda/adapters/iot';
-import { thingAdaptor } from '../lambda/adapters/thing';
+import { iotAdaptor } from './adapters/iot';
+import { thingAdaptor } from './adapters/thing';
 
 const logger = new StandardLogger();
 
@@ -12,39 +12,43 @@ type Failure = lambda.CloudFormationCustomResourceFailedResponse;
 const thingHandler = thingAdaptor(iotAdaptor(new Iot()));
 
 export const handler = async (event: lambda.CloudFormationCustomResourceEvent): Promise<Success | Failure> => {
+    const { RequestType, LogicalResourceId, RequestId, StackId } = event;
+
     try {
         const thingName = event.ResourceProperties.ThingName;
-        if (event.RequestType === 'Create') {
+        if (RequestType === 'Create') {
             const { thingArn, certId, certPem, privKey } = await thingHandler.create(thingName);
+
             return {
                 Status: 'SUCCESS',
                 PhysicalResourceId: thingArn,
-                LogicalResourceId: event.LogicalResourceId,
-                RequestId: event.RequestId,
-                StackId: event.StackId,
+                LogicalResourceId,
+                RequestId,
+                StackId,
                 Data: {
-                    certPem: certPem,
-                    privKey: privKey,
-                    certId: certId,
+                    certPem,
+                    privKey,
+                    certId,
                 },
             };
         } else if (event.RequestType === 'Delete') {
             await thingHandler.delete(thingName);
+
             return {
                 Status: 'SUCCESS',
                 PhysicalResourceId: event.PhysicalResourceId,
-                LogicalResourceId: event.LogicalResourceId,
-                RequestId: event.RequestId,
-                StackId: event.StackId,
+                LogicalResourceId,
+                RequestId,
+                StackId,
             };
         } else if (event.RequestType === 'Update') {
             logger.info(`Updating thing: ${thingName}`);
             return {
                 Status: 'SUCCESS',
                 PhysicalResourceId: event.PhysicalResourceId,
-                LogicalResourceId: event.LogicalResourceId,
-                RequestId: event.RequestId,
-                StackId: event.StackId,
+                LogicalResourceId,
+                RequestId,
+                StackId,
             };
         } else {
             throw new Error('Received invalid request type');
@@ -53,11 +57,11 @@ export const handler = async (event: lambda.CloudFormationCustomResourceEvent): 
         return {
             Status: 'FAILED',
             Reason: err.message,
-            RequestId: event.RequestId,
-            StackId: event.StackId,
-            LogicalResourceId: event.LogicalResourceId!,
+            RequestId,
+            StackId,
+            LogicalResourceId,
             // @ts-ignore
-            PhysicalResourceId: event.PhysicalResourceId || event.LogicalResourceId,
+            PhysicalResourceId: event.PhysicalResourceId || LogicalResourceId,
         };
     }
 };

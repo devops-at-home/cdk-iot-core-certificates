@@ -6,6 +6,7 @@ import { RetentionDays } from 'aws-cdk-lib/aws-logs';
 import { CfnParameter } from 'aws-cdk-lib/aws-ssm';
 import { Provider } from 'aws-cdk-lib/custom-resources';
 import { Construct } from 'constructs';
+import { join } from 'path';
 
 export interface ThingWithCertProps extends ResourceProps {
     readonly thingName: string;
@@ -41,20 +42,20 @@ export class ThingWithCert extends Construct {
             })
         );
 
-        const lambdaFunction = new NodejsFunction(this, 'lambdaFunction', {
-            entry: `${__dirname}/lambda/index.js`,
+        const onEventHandler = new NodejsFunction(this, 'lambdaFunction', {
+            entry: join(__dirname, 'lambda', 'index.js'),
             handler: 'handler',
             timeout: Duration.seconds(10),
             role: lambdaExecutionRole,
             logRetention: RetentionDays.ONE_DAY,
         });
 
-        const lambdaProvider = new Provider(this, 'lambdaProvider', {
-            onEventHandler: lambdaFunction,
+        const { serviceToken } = new Provider(this, 'lambdaProvider', {
+            onEventHandler,
         });
 
         const lambdaCustomResource = new CfnCustomResource(this, 'lambdaCustomResource', {
-            serviceToken: lambdaProvider.serviceToken,
+            serviceToken,
         });
 
         lambdaCustomResource.addPropertyOverride('ThingName', thingName);
