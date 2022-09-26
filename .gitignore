@@ -31,7 +31,6 @@ jspm_packages/
 .yarn-integrity
 .cache
 .idea
-.DS_Store
 !/.projenrc.js
 /test-reports/
 junit.xml
@@ -54,4 +53,4 @@ junit.xml
 tsconfig.json
 !/API.md
 /assets/
-!/src\custom-resource-function.ts
+!/src\lambda\custom-resource-function.ts

@@ -46,25 +46,25 @@
       "description": "Prepare assets",
       "steps": [
         {
-          "spawn": "bundle:custom-resource.lambda"
+          "spawn": "bundle:lambda\\custom-resource.lambda"
         }
       ]
     },
-    "bundle:custom-resource.lambda": {
-      "name": "bundle:custom-resource.lambda",
-      "description": "Create a JavaScript bundle from src\\custom-resource.lambda.ts",
+    "bundle:lambda\\custom-resource.lambda": {
+      "name": "bundle:lambda\\custom-resource.lambda",
+      "description": "Create a JavaScript bundle from src\\lambda\\custom-resource.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src\\custom-resource.lambda.ts --target=\"node14\" --platform=\"node\" --outfile=\"assets\\custom-resource.lambda\\index.js\" --tsconfig=\"tsconfig.dev.json\" --external:aws-sdk"
+          "exec": "esbuild --bundle src\\lambda\\custom-resource.lambda.ts --target=\"node14\" --platform=\"node\" --outfile=\"assets\\lambda\\custom-resource.lambda\\index.js\" --tsconfig=\"tsconfig.dev.json\" --external:aws-sdk"
         }
       ]
     },
-    "bundle:custom-resource.lambda:watch": {
-      "name": "bundle:custom-resource.lambda:watch",
-      "description": "Continuously update the JavaScript bundle from src\\custom-resource.lambda.ts",
+    "bundle:lambda\\custom-resource.lambda:watch": {
+      "name": "bundle:lambda\\custom-resource.lambda:watch",
+      "description": "Continuously update the JavaScript bundle from src\\lambda\\custom-resource.lambda.ts",
       "steps": [
         {
-          "exec": "esbuild --bundle src\\custom-resource.lambda.ts --target=\"node14\" --platform=\"node\" --outfile=\"assets\\custom-resource.lambda\\index.js\" --tsconfig=\"tsconfig.dev.json\" --external:aws-sdk --watch"
+          "exec": "esbuild --bundle src\\lambda\\custom-resource.lambda.ts --target=\"node14\" --platform=\"node\" --outfile=\"assets\\lambda\\custom-resource.lambda\\index.js\" --tsconfig=\"tsconfig.dev.json\" --external:aws-sdk --watch"
         }
       ]
     },

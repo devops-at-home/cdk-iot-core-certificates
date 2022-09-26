@@ -10,16 +10,16 @@ export interface CustomResourceFunctionProps extends lambda.FunctionOptions {
 }
 
 /**
- * An AWS Lambda function which executes src/custom-resource.
+ * An AWS Lambda function which executes src/lambda/custom-resource.
  */
 export class CustomResourceFunction extends lambda.Function {
   constructor(scope: Construct, id: string, props?: CustomResourceFunctionProps) {
     super(scope, id, {
-      description: 'src/custom-resource.lambda.ts',
+      description: 'src/lambda/custom-resource.lambda.ts',
       ...props,
       runtime: new lambda.Runtime('nodejs14.x', lambda.RuntimeFamily.NODEJS),
       handler: 'index.handler',
-      code: lambda.Code.fromAsset(path.join(__dirname, '../assets/custom-resource.lambda')),
+      code: lambda.Code.fromAsset(path.join(__dirname, '../../assets/lambda/custom-resource.lambda')),
     });
     this.addEnvironment('AWS_NODEJS_CONNECTION_REUSE_ENABLED', '1', { removeInEdge: true });
   }

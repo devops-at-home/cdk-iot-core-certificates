@@ -1,8 +1,8 @@
 import { StandardLogger } from 'aws-cloudformation-custom-resource';
 import * as lambda from 'aws-lambda';
 import { Iot } from 'aws-sdk';
-import { iotAdaptor } from './lambda/adapters/iot';
-import { thingAdaptor } from './lambda/adapters/thing';
+import { iotAdaptor } from './adapters/iot';
+import { thingAdaptor } from './adapters/thing';
 
 const logger = new StandardLogger();
 
