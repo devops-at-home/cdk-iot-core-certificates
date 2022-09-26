@@ -98,9 +98,9 @@ Object {
           "S3Bucket": Object {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "7a96f216ff9164233071950394f821f0b8fb9c28c4b4c974b0245282804d6cf7.zip",
+          "S3Key": "b9e58d22313bbf0b744e1371b4ebd6ff8bad1d339c75768134e50f34008b927c.zip",
         },
-        "Description": "src/lambda/custom-resource.lambda.ts",
+        "Description": "src/custom-resource.lambda.ts",
         "Environment": Object {
           "Variables": Object {
             "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",

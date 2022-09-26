@@ -5,7 +5,7 @@ import { RetentionDays } from 'aws-cdk-lib/aws-logs';
 import { CfnParameter } from 'aws-cdk-lib/aws-ssm';
 import { Provider } from 'aws-cdk-lib/custom-resources';
 import { Construct } from 'constructs';
-import { CustomResourceFunction } from './lambda/custom-resource-function';
+import { CustomResourceFunction } from './custom-resource-function';
 
 export interface ThingWithCertProps extends ResourceProps {
     readonly thingName: string;
