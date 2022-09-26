@@ -6,6 +6,7 @@ import { RetentionDays } from 'aws-cdk-lib/aws-logs';
 import { CfnParameter } from 'aws-cdk-lib/aws-ssm';
 import { Provider } from 'aws-cdk-lib/custom-resources';
 import { Construct } from 'constructs';
+import { join } from 'path';
 
 export interface ThingWithCertProps extends ResourceProps {
     readonly thingName: string;
@@ -42,7 +43,7 @@ export class ThingWithCert extends Construct {
         );
 
         const lambdaFunction = new NodejsFunction(this, 'lambdaFunction', {
-            entry: `${__dirname}/lambda/index.ts`,
+            entry: join(__dirname, 'lambda', 'index.js'),
             handler: 'handler',
             timeout: Duration.seconds(10),
             role: lambdaExecutionRole,
