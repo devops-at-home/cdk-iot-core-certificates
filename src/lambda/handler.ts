@@ -49,7 +49,7 @@ export const handler = async (event: lambda.CloudFormationCustomResourceEvent): 
         } else {
             throw new Error('Received invalid request type');
         }
-    } catch (err) {
+    } catch (err: any) {
         return {
             Status: 'FAILED',
             Reason: err.message,

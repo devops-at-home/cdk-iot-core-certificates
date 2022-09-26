@@ -42,7 +42,7 @@ export class ThingWithCert extends Construct {
         );
 
         const lambdaFunction = new NodejsFunction(this, 'lambdaFunction', {
-            entry: `${__dirname}/lambda/index.ts`,
+            entry: `${__dirname}/lambda/index.js`,
             handler: 'handler',
             timeout: Duration.seconds(10),
             role: lambdaExecutionRole,
