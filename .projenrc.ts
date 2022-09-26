@@ -10,8 +10,9 @@ const project = new awscdk.AwsCdkConstructLibrary({
     projenrcTs: true,
     repositoryUrl: 'git@github.com:devops-at-home/cdk-iot-core-certificates.git',
     license: 'MIT',
-    gitignore: ['.idea', '.DS_Store'],
-    devDeps: ['esbuild', '@types/aws-lambda', 'aws-lambda', 'aws-sdk', 'aws-cloudformation-custom-resource'],
+    gitignore: ['.idea'],
+    devDeps: ['esbuild', '@types/aws-lambda', 'aws-sdk'],
+    deps: ['aws-cloudformation-custom-resource', 'aws-lambda'],
     prettier: true,
     prettierOptions: {
         settings: {
