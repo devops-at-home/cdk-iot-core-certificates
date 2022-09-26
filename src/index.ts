@@ -1,11 +1,11 @@
 import { Duration, ResourceProps } from 'aws-cdk-lib';
 import { CfnCustomResource } from 'aws-cdk-lib/aws-cloudformation';
 import { CompositePrincipal, PolicyStatement, Role, ServicePrincipal } from 'aws-cdk-lib/aws-iam';
-import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { RetentionDays } from 'aws-cdk-lib/aws-logs';
 import { CfnParameter } from 'aws-cdk-lib/aws-ssm';
 import { Provider } from 'aws-cdk-lib/custom-resources';
 import { Construct } from 'constructs';
+import { CustomResourceFunction } from './custom-resource-function';
 
 export interface ThingWithCertProps extends ResourceProps {
     readonly thingName: string;
@@ -23,38 +23,36 @@ export class ThingWithCert extends Construct {
 
         const { thingName, saveToParamStore, paramPrefix } = props;
 
-        const lambdaExecutionRole = new Role(this, 'LambdaExecutionRole', {
+        const role = new Role(this, 'LambdaExecutionRole', {
             assumedBy: new CompositePrincipal(new ServicePrincipal('lambda.amazonaws.com')),
         });
 
-        lambdaExecutionRole.addToPolicy(
+        role.addToPolicy(
             new PolicyStatement({
                 resources: ['arn:aws:logs:*:*:*'],
                 actions: ['logs:CreateLogGroup', 'logs:CreateLogStream', 'logs:PutLogEvents'],
             })
         );
 
-        lambdaExecutionRole.addToPolicy(
+        role.addToPolicy(
             new PolicyStatement({
                 resources: ['*'],
                 actions: ['iot:*'],
             })
         );
 
-        const lambdaFunction = new NodejsFunction(this, 'lambdaFunction', {
-            entry: `${__dirname}/lambda/index.js`,
-            handler: 'handler',
+        const onEventHandler = new CustomResourceFunction(this, 'CustomResourceFunction', {
+            role,
             timeout: Duration.seconds(10),
-            role: lambdaExecutionRole,
             logRetention: RetentionDays.ONE_DAY,
         });
 
-        const lambdaProvider = new Provider(this, 'lambdaProvider', {
-            onEventHandler: lambdaFunction,
+        const { serviceToken } = new Provider(this, 'lambdaProvider', {
+            onEventHandler,
         });
 
         const lambdaCustomResource = new CfnCustomResource(this, 'lambdaCustomResource', {
-            serviceToken: lambdaProvider.serviceToken,
+            serviceToken,
         });
 
         lambdaCustomResource.addPropertyOverride('ThingName', thingName);

@@ -88,6 +88,59 @@ Object {
       },
       "Type": "AWS::IAM::Policy",
     },
+    "ThingWithCertCustomResourceFunction46EB4567": Object {
+      "DependsOn": Array [
+        "ThingWithCertLambdaExecutionRoleDefaultPolicy9FF9FB4B",
+        "ThingWithCertLambdaExecutionRole25FAB8F4",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "S3Bucket": Object {
+            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
+          },
+          "S3Key": "b9e58d22313bbf0b744e1371b4ebd6ff8bad1d339c75768134e50f34008b927c.zip",
+        },
+        "Description": "src/custom-resource.lambda.ts",
+        "Environment": Object {
+          "Variables": Object {
+            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
+          },
+        },
+        "Handler": "index.handler",
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "ThingWithCertLambdaExecutionRole25FAB8F4",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs14.x",
+        "Timeout": 10,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "ThingWithCertCustomResourceFunctionLogRetention3F3AEFAF": Object {
+      "Properties": Object {
+        "LogGroupName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "/aws/lambda/",
+              Object {
+                "Ref": "ThingWithCertCustomResourceFunction46EB4567",
+              },
+            ],
+          ],
+        },
+        "RetentionInDays": 1,
+        "ServiceToken": Object {
+          "Fn::GetAtt": Array [
+            "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "Custom::LogRetention",
+    },
     "ThingWithCertLambdaExecutionRole25FAB8F4": Object {
       "Properties": Object {
         "AssumeRolePolicyDocument": Object {
@@ -147,58 +200,6 @@ Object {
       },
       "Type": "AWS::CloudFormation::CustomResource",
     },
-    "ThingWithCertlambdaFunction9E90C8BA": Object {
-      "DependsOn": Array [
-        "ThingWithCertLambdaExecutionRoleDefaultPolicy9FF9FB4B",
-        "ThingWithCertLambdaExecutionRole25FAB8F4",
-      ],
-      "Properties": Object {
-        "Code": Object {
-          "S3Bucket": Object {
-            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
-          },
-          "S3Key": "0b1c9f464f672be980b30e4bfb612df4b16c8ac81c0f9ba3095fd66cd7321ab7.zip",
-        },
-        "Environment": Object {
-          "Variables": Object {
-            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1",
-          },
-        },
-        "Handler": "index.handler",
-        "Role": Object {
-          "Fn::GetAtt": Array [
-            "ThingWithCertLambdaExecutionRole25FAB8F4",
-            "Arn",
-          ],
-        },
-        "Runtime": "nodejs14.x",
-        "Timeout": 10,
-      },
-      "Type": "AWS::Lambda::Function",
-    },
-    "ThingWithCertlambdaFunctionLogRetention1BE9E451": Object {
-      "Properties": Object {
-        "LogGroupName": Object {
-          "Fn::Join": Array [
-            "",
-            Array [
-              "/aws/lambda/",
-              Object {
-                "Ref": "ThingWithCertlambdaFunction9E90C8BA",
-              },
-            ],
-          ],
-        },
-        "RetentionInDays": 1,
-        "ServiceToken": Object {
-          "Fn::GetAtt": Array [
-            "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
-            "Arn",
-          ],
-        },
-      },
-      "Type": "Custom::LogRetention",
-    },
     "ThingWithCertlambdaProviderframeworkonEvent497EC884": Object {
       "DependsOn": Array [
         "ThingWithCertlambdaProviderframeworkonEventServiceRoleDefaultPolicyC133ABFF",
@@ -216,7 +217,7 @@ Object {
           "Variables": Object {
             "USER_ON_EVENT_FUNCTION_ARN": Object {
               "Fn::GetAtt": Array [
-                "ThingWithCertlambdaFunction9E90C8BA",
+                "ThingWithCertCustomResourceFunction46EB4567",
                 "Arn",
               ],
             },
@@ -275,7 +276,7 @@ Object {
               "Resource": Array [
                 Object {
                   "Fn::GetAtt": Array [
-                    "ThingWithCertlambdaFunction9E90C8BA",
+                    "ThingWithCertCustomResourceFunction46EB4567",
                     "Arn",
                   ],
                 },
@@ -285,7 +286,7 @@ Object {
                     Array [
                       Object {
                         "Fn::GetAtt": Array [
-                          "ThingWithCertlambdaFunction9E90C8BA",
+                          "ThingWithCertCustomResourceFunction46EB4567",
                           "Arn",
                         ],
                       },

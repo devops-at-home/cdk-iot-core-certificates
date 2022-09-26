@@ -7,6 +7,9 @@
   "scripts": {
     "build": "npx projen build",
     "bump": "npx projen bump",
+    "bundle": "npx projen bundle",
+    "bundle:custom-resource.lambda": "npx projen bundle:custom-resource.lambda",
+    "bundle:custom-resource.lambda:watch": "npx projen bundle:custom-resource.lambda:watch",
     "clobber": "npx projen clobber",
     "compat": "npx projen compat",
     "compile": "npx projen compile",
