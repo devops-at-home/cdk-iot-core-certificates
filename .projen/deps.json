@@ -20,6 +20,10 @@
       "type": "build"
     },
     {
+      "name": "aws-lambda",
+      "type": "build"
+    },
+    {
       "name": "aws-sdk",
       "type": "build"
     },
@@ -88,14 +92,6 @@
     {
       "name": "typescript",
       "type": "build"
-    },
-    {
-      "name": "aws-cloudformation-custom-resource",
-      "type": "bundled"
-    },
-    {
-      "name": "aws-lambda",
-      "type": "bundled"
     },
     {
       "name": "aws-cdk-lib",
