@@ -3,7 +3,7 @@ import { awscdk } from 'projen';
 const project = new awscdk.AwsCdkConstructLibrary({
     author: 'DevOps@Home',
     authorAddress: 'devops.at.home@gmail.com',
-    cdkVersion: '2.43.1',
+    cdkVersion: '2.44.0',
     defaultReleaseBranch: 'main',
     eslint: false,
     name: 'cdk-iot-core-certificates',
