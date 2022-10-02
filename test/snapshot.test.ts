@@ -1,14 +1,18 @@
 import { Stack } from 'aws-cdk-lib';
 import { Template } from 'aws-cdk-lib/assertions';
-import { ThingWithCert } from '../src';
+import { IotCertificateWithDefaultCa, IotThing } from '../src';
 
 describe('Snapshot test', () => {
     const stack = new Stack();
 
-    new ThingWithCert(stack, 'ThingWithCert', {
+    const certificate = new IotCertificateWithDefaultCa(stack, 'IotCertificateWithDefaultCa', {
+        paramStorePath: 'some/path',
+    });
+
+    new IotThing(stack, 'IotThing', {
         thingName: 'thingName',
-        saveToParamStore: true,
-        paramPrefix: 'paramPrefix',
+        certificate,
+        statements: [],
     });
 
     const template = Template.fromStack(stack);

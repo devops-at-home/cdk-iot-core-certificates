@@ -16,16 +16,16 @@ import { DeleteCertificateFunction } from './lambda/delete-certificate-function'
 
 // From: https://github.com/aws-samples/aws-cdk-examples/pull/717/commits/a7679b0de9a555eff0bbe53dd5dd3eddd3bfb962
 
-type IIotCoreCertficate = {
-    certificateId: string;
-    certificateArn: string;
-};
+interface IIotCoreCertficate {
+    readonly certificateId: string;
+    readonly certificateArn: string;
+}
 
-type IIotCaCertificate = {
+interface IIotCaCertificate {
     readonly certificateId: string;
     readonly certificateArn: string;
     readonly caCertificatePem: string;
-};
+}
 
 export interface IotThingProps extends ResourceProps {
     readonly thingName: string;
