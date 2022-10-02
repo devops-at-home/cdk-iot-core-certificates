@@ -1,31 +1,29 @@
-import { Duration, ResourceProps, Token } from 'aws-cdk-lib';
+import { ResourceProps, Token } from 'aws-cdk-lib';
 import { CfnCertificate, CfnPolicyPrincipalAttachment, CfnThingPrincipalAttachment } from 'aws-cdk-lib/aws-iot';
-import { CfnCustomResource } from 'aws-cdk-lib/aws-cloudformation';
-import {
-    CfnPolicy,
-    CompositePrincipal,
-    PolicyDocument,
-    PolicyStatement,
-    Role,
-    ServicePrincipal,
-} from 'aws-cdk-lib/aws-iam';
+import { CfnPolicy, PolicyDocument, PolicyStatement } from 'aws-cdk-lib/aws-iam';
 import { CfnCACertificate, CfnThing } from 'aws-cdk-lib/aws-iot';
-import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
-import { RetentionDays } from 'aws-cdk-lib/aws-logs';
 import { CfnParameter } from 'aws-cdk-lib/aws-ssm';
-import { Provider } from 'aws-cdk-lib/custom-resources';
+import {
+    AwsCustomResource,
+    AwsCustomResourcePolicy,
+    PhysicalResourceId,
+    PhysicalResourceIdReference,
+} from 'aws-cdk-lib/custom-resources';
 import { Construct } from 'constructs';
 import { readFileSync } from 'fs';
-import { join, resolve } from 'path';
+import { resolve } from 'path';
+import { DeleteCertificateFunction } from './lambda/delete-certificate-function';
+
+// From: https://github.com/aws-samples/aws-cdk-examples/pull/717/commits/a7679b0de9a555eff0bbe53dd5dd3eddd3bfb962
 
 type IIotCoreCertficate = {
-    certId: string;
-    certArn: string;
+    certificateId: string;
+    certificateArn: string;
 };
 
 type IIotCaCertificate = {
-    readonly certId: string;
-    readonly certArn: string;
+    readonly certificateId: string;
+    readonly certificateArn: string;
     readonly caCertificatePem: string;
 };
 
@@ -49,25 +47,26 @@ export class IotThing extends Construct {
 
         this.thingName = thing.ref;
 
+        // https://github.com/aws-cloudformation/cloudformation-coverage-roadmap/issues/469
         const policyDocument = new PolicyDocument({ statements });
 
         const policy = new CfnPolicy(this, 'Policy', { policyDocument, policyName: thingName });
 
         new CfnThingPrincipalAttachment(this, 'TPA', {
             thingName: thing.ref,
-            principal: Token.asString(certificate.certArn),
+            principal: Token.asString(certificate.certificateArn),
         });
 
         new CfnPolicyPrincipalAttachment(this, 'PPA', {
             policyName: Token.asString(policy.getAtt('Id')),
-            principal: Token.asString(certificate.certArn),
+            principal: Token.asString(certificate.certificateArn),
         });
     }
 }
 
 // class IotCertificate extends Construct {
-//     public readonly certId: string;
-//     public readonly certArn: string;
+//     public readonly certificateId: string;
+//     public readonly certificateArn: string;
 // }
 
 export interface IotCertificateFromFilesProps extends ResourceProps {
@@ -76,8 +75,8 @@ export interface IotCertificateFromFilesProps extends ResourceProps {
 }
 
 export class IotCertificateFromFiles extends Construct {
-    public readonly certId: string;
-    public readonly certArn: string;
+    public readonly certificateId: string;
+    public readonly certificateArn: string;
     constructor(scope: Construct, id: string, props: IotCertificateFromFilesProps) {
         super(scope, id);
 
@@ -93,8 +92,8 @@ export class IotCertificateFromFiles extends Construct {
 
         cert.node.addDependency(caCert);
 
-        this.certArn = cert.attrArn;
-        this.certId = cert.attrId;
+        this.certificateArn = cert.attrArn;
+        this.certificateId = cert.attrId;
     }
 }
 
@@ -104,8 +103,8 @@ export interface IotCaCertificateFromFilesProps extends ResourceProps {
 }
 
 export class IotCaCertificateFromFiles extends Construct {
-    public readonly certId: string;
-    public readonly certArn: string;
+    public readonly certificateId: string;
+    public readonly certificateArn: string;
     public readonly caCertificatePem: string;
     constructor(scope: Construct, id: string, props: IotCaCertificateFromFilesProps) {
         super(scope, id);
@@ -118,8 +117,8 @@ export class IotCaCertificateFromFiles extends Construct {
             verificationCertificatePem: readFileSync(resolve(verificationCertificatePemFile), 'utf8'),
         });
 
-        this.certArn = caCert.attrArn;
-        this.certId = caCert.attrId;
+        this.certificateArn = caCert.attrArn;
+        this.certificateId = caCert.attrId;
         this.caCertificatePem = caCert.caCertificatePem;
     }
 }
@@ -129,50 +128,51 @@ export interface IotCertificateWithDefaultCaProps extends ResourceProps {
 }
 
 export class IotCertificateWithDefaultCa extends Construct {
-    public readonly certId: string;
-    public readonly certArn: string;
+    public readonly certificateId: string;
+    public readonly certificateArn: string;
     constructor(scope: Construct, id: string, props: IotCertificateWithDefaultCaProps) {
         super(scope, id);
 
         const { paramStorePath } = props;
 
-        const role = new Role(this, 'LambdaExecutionRole', {
-            assumedBy: new CompositePrincipal(new ServicePrincipal('lambda.amazonaws.com')),
+        const onDeleteFn = new DeleteCertificateFunction(this, 'Function');
+
+        const awsCustom = new AwsCustomResource(this, 'AwsCustomResource', {
+            onCreate: {
+                service: 'iotcore', // TODO: check this
+                action: 'CreateKeysAndCertificate',
+                physicalResourceId: PhysicalResourceId.fromResponse('certificateId'),
+                parameters: {
+                    setAsActive: true,
+                },
+            },
+            onDelete: {
+                service: 'lambda',
+                action: 'Invoke',
+                parameters: {
+                    Payload: {
+                        certificateId: new PhysicalResourceIdReference(),
+                    }, // TODO: Check this is being passed in correctly
+                    FunctionName: onDeleteFn.functionName,
+                },
+            },
+            resourceType: 'Custom::IoT::Certificate',
+            policy: AwsCustomResourcePolicy.fromSdkCalls({
+                resources: AwsCustomResourcePolicy.ANY_RESOURCE, // TODO: Check permissions
+            }),
         });
 
-        role.addToPolicy(
-            new PolicyStatement({
-                resources: ['arn:aws:logs:*:*:*'],
-                actions: ['logs:CreateLogGroup', 'logs:CreateLogStream', 'logs:PutLogEvents'],
-            })
-        );
-
-        const onEventHandler = new NodejsFunction(this, 'lambdaFunction', {
-            entry: join(__dirname, 'lambda', 'index.js'),
-            handler: 'handler',
-            timeout: Duration.seconds(10),
-            role,
-            logRetention: RetentionDays.ONE_DAY,
-        });
-
-        const { serviceToken } = new Provider(this, 'lambdaProvider', {
-            onEventHandler,
-        });
-
-        const lambdaCustomResource = new CfnCustomResource(this, 'lambdaCustomResource', {
-            serviceToken,
-        });
-
-        const privKey = lambdaCustomResource.getAtt('privKey').toString();
-        const certId = lambdaCustomResource.getAtt('certId').toString();
+        const privateKey = awsCustom.getResponseField('keyPair.PrivateKey');
+        const certificateId = awsCustom.getResponseField('certificateId');
+        const certificateArn = awsCustom.getResponseField('certificateArn');
 
         new CfnParameter(this, 'Parameter', {
             type: 'String',
-            value: privKey,
+            value: privateKey,
             name: paramStorePath,
         });
 
-        this.certArn = `arn::${certId}`;
-        this.certId = certId;
+        this.certificateArn = certificateArn;
+        this.certificateId = certificateId;
     }
 }
