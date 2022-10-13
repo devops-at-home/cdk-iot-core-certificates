@@ -33,7 +33,7 @@
     "organization": false
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.106",
+    "@types/aws-lambda": "^8.10.107",
     "@types/jest": "^27",
     "@types/node": "^14",
     "aws-cdk-lib": "2.43.1",
@@ -45,11 +45,11 @@
     "jest-junit": "^13",
     "jsii": "^1.69.0",
     "jsii-diff": "^1.69.0",
-    "jsii-docgen": "^7.0.112",
+    "jsii-docgen": "^7.0.113",
     "jsii-pacmak": "^1.69.0",
     "npm-check-updates": "^16",
     "prettier": "^2.7.1",
-    "projen": "^0.63.17",
+    "projen": "^0.63.18",
     "standard-version": "^9",
     "ts-jest": "^27",
     "ts-node": "^10.9.1",
