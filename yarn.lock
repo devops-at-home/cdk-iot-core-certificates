@@ -1160,10 +1160,10 @@ aws-lambda@^1.0.7:
     js-yaml "^3.14.1"
     watchpack "^2.0.0-beta.10"
 
-aws-sdk@^2.1237.0, aws-sdk@^2.814.0:
-  version "2.1237.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1237.0.tgz#e1e14cf02ffb4b512b09be9c792edb3f18bc6d88"
-  integrity sha512-yjPtCDtyCPwRoTdO9fUYm2h5yi3Dlnfx3OUzrepVk9gA/byclzwHsVL8SibCw5y/+euGNud9xl67uDRDvzIGcg==
+aws-sdk@^2.1238.0, aws-sdk@^2.814.0:
+  version "2.1238.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1238.0.tgz#4d67f7c9f2a3d293b94b6f78a15651e8fd886778"
+  integrity sha512-DCXAj98lFW0y2Ickm0MbXnxzbG5IDrhBXs6Wx+vscrYNFRjy7JGau9HACY8aFoesMQz8PzNmJKR82Dg2NsGvDg==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -1433,9 +1433,9 @@ camelcase@^7.0.0:
   integrity sha512-JToIvOmz6nhGsUhAYScbo2d6Py5wojjNfoxoc2mEVLUdJ70gJK2gnd+ABY1Tc3sVMyK7QDPtN0T/XdlCQWITyQ==
 
 caniuse-lite@^1.0.30001400:
-  version "1.0.30001422"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001422.tgz#f2d7c6202c49a8359e6e35add894d88ef93edba1"
-  integrity sha512-hSesn02u1QacQHhaxl/kNMZwqVG35Sz/8DgvmgedxSH8z9UUpcDYSPYgsj3x5dQNRcNp6BwpSfQfVzYUTm+fog==
+  version "1.0.30001423"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001423.tgz#57176d460aa8cd85ee1a72016b961eb9aca55d91"
+  integrity sha512-09iwWGOlifvE1XuHokFMP7eR38a0JnajoyL3/i87c8ZjRWRrdKo1fqjNfugfBD0UDBIOz0U+jtNhJ0EPm1VleQ==
 
 case@1.6.3, case@^1.6.3:
   version "1.6.3"
@@ -3760,10 +3760,10 @@ jsii-diff@^1.70.0:
     log4js "^6.7.0"
     yargs "^16.2.0"
 
-jsii-docgen@^7.0.120:
-  version "7.0.121"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.121.tgz#80fd3164db9cd923f3d7e63e1cd53a594e4f31c7"
-  integrity sha512-c/wScT5qOFgD/tJnIOWiX5po6HpopVLymWDPVSAQ94qv6k8FMBSDiqv25VBRplvJaLEmvwlPL3uzadPbkoqxAg==
+jsii-docgen@^7.0.122:
+  version "7.0.122"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.122.tgz#9912b5f9b8ae358f2296243bb78ad90e95d18162"
+  integrity sha512-KS8lsRPEbRfs/5xBd+8U6FFvUroH77FN/DORN+KE6N+WuVSflu+ZDpZRHzwclA+BDovDleZ2qpgeOywXAttobA==
   dependencies:
     "@jsii/spec" "^1.70.0"
     case "^1.6.3"
@@ -4379,9 +4379,9 @@ npm-bundled@^1.1.1:
     npm-normalize-package-bin "^1.0.1"
 
 npm-check-updates@^16:
-  version "16.3.14"
-  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-16.3.14.tgz#08b77f09e8bdc36fb3826d4fced6fedf7fb59971"
-  integrity sha512-6sJg4rILKJiXGYPZei0lgFIe+5/nxuwh7PP3SDeZH0Oh2fJfnnzXtO8CQTG2JugYcB5p5nkksyN+NE1YE8XRYg==
+  version "16.3.15"
+  resolved "https://registry.yarnpkg.com/npm-check-updates/-/npm-check-updates-16.3.15.tgz#7be188dd1abc8e9634fe20569595912e298d12dc"
+  integrity sha512-gRjApPUQxcdZuwIMTvWxPrB1mBWTml0Xj4t50vxdsItXUaNryYGrGve3ouZGxbowcs46Tji1tSbw7+9lnGT0sA==
   dependencies:
     chalk "^5.1.2"
     cli-table "^0.3.11"
@@ -4407,7 +4407,7 @@ npm-check-updates@^16:
     semver "^7.3.8"
     semver-utils "^1.1.4"
     source-map-support "^0.5.21"
-    spawn-please "^1.0.0"
+    spawn-please "^2.0.1"
     untildify "^4.0.0"
     update-notifier "^6.0.2"
     yaml "^2.1.3"
@@ -4782,10 +4782,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.63.30:
-  version "0.63.30"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.63.30.tgz#3b8ad2a34d9a396ba1d5a0be8549a1c3543d1d7d"
-  integrity sha512-SKmFgk41MNLqFe/7vurHvpLr3N7WpkXVXR7yYuuQVeSGEIMLIU8DMjgajq14QathisWu9ielwZvYuUeb7zhNfw==
+projen@^0.63.32:
+  version "0.63.32"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.63.32.tgz#76c6aa507bfe38f76d3549dc256f2a3d217325d6"
+  integrity sha512-NlSM7dN2h2caYBsm7cXodgXzFnS93qwm2b7qKoOE474hZKwXkDEb73XwLUmOtR1BT+M56x33Uf9jJ99hkIVVIw==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
@@ -5314,10 +5314,12 @@ source-map@^0.7.3:
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.7.4.tgz#a9bbe705c9d8846f4e08ff6765acf0f1b0898656"
   integrity sha512-l3BikUxvPOcn5E74dZiq5BGsTb5yEwhaTSzccU6t4sDOH8NWJCstKO5QT2CvtFoK6F0saL7p9xHAqHOlCPJygA==
 
-spawn-please@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/spawn-please/-/spawn-please-1.0.0.tgz#51cf5831ba2bf418aa3ec2102d40b75cfd48b6f2"
-  integrity sha512-Kz33ip6NRNKuyTRo3aDWyWxeGeM0ORDO552Fs6E1nj4pLWPkl37SrRtTnq+MEopVaqgmaO6bAvVS+v64BJ5M/A==
+spawn-please@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/spawn-please/-/spawn-please-2.0.1.tgz#13d76566ca5e9ac0537a90853ca4f53f27489ae0"
+  integrity sha512-W+cFbZR2q2mMTfjz5ZGvhBAiX+e/zczFCNlbS9mxiSdYswBXwUuBUT+a0urH+xZZa8f/bs0mXHyZsZHR9hKogA==
+  dependencies:
+    cross-spawn "^7.0.3"
 
 spdx-correct@^3.0.0:
   version "3.1.1"
