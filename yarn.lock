@@ -886,9 +886,9 @@
   integrity sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==
 
 "@types/node@*":
-  version "18.11.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.11.4.tgz#7017a52e18dfaad32f55eebd539993014441949c"
-  integrity sha512-BxcJpBu8D3kv/GZkx/gSMz6VnTJREBj/4lbzYOQueUOELkt8WrO6zAcSPmp9uRPEW/d+lUO8QK0W2xnS1hEU0A==
+  version "18.11.5"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.11.5.tgz#1bc94cf2f9ab5fe33353bc7c79c797dcc5325bef"
+  integrity sha512-3JRwhbjI+cHLAkUorhf8RnqUbFXajvzX4q6fMn5JwkgtuwfYtRQYI3u4V92vI6NJuTsbBQWWh3RZjFsuevyMGQ==
 
 "@types/node@^14":
   version "14.18.32"
@@ -976,9 +976,9 @@ acorn@^7.1.1:
   integrity sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==
 
 acorn@^8.2.4, acorn@^8.4.1:
-  version "8.8.0"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.8.0.tgz#88c0187620435c7f6015803f5539dae05a9dbea8"
-  integrity sha512-QOxyigPVrpZ2GXT+PFyZTl6TtOFc5egxHIP9IlQ+RbupQuX4RkT/Bee4/kQuC02Xkzg84JcT7oLYtDIQxp+v7w==
+  version "8.8.1"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.8.1.tgz#0a3f9cbecc4ec3bea6f0a80b66ae8dd2da250b73"
+  integrity sha512-7zFpHzhnqYKrkYdUjF1HI1bzd0VygEGX8lFk4k5zVMqHEoES+P+7TKI+EvLO9WVMJ8eekdO0aDEK044xTXwPPA==
 
 add-stream@^1.0.0:
   version "1.0.0"
@@ -1160,10 +1160,10 @@ aws-lambda@^1.0.7:
     js-yaml "^3.14.1"
     watchpack "^2.0.0-beta.10"
 
-aws-sdk@^2.1238.0, aws-sdk@^2.814.0:
-  version "2.1238.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1238.0.tgz#4d67f7c9f2a3d293b94b6f78a15651e8fd886778"
-  integrity sha512-DCXAj98lFW0y2Ickm0MbXnxzbG5IDrhBXs6Wx+vscrYNFRjy7JGau9HACY8aFoesMQz8PzNmJKR82Dg2NsGvDg==
+aws-sdk@^2.1239.0, aws-sdk@^2.814.0:
+  version "2.1239.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1239.0.tgz#606e4fb0345da86db801538e13925828a9acbb31"
+  integrity sha512-746OlzNxjaMux93cTr5//WyY8t2HwRuJOO41qKDhXmklZibFDBc/3v/8CYzb1jsEYy77AO2J045+TkP9N10Wcw==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -3760,10 +3760,10 @@ jsii-diff@^1.70.0:
     log4js "^6.7.0"
     yargs "^16.2.0"
 
-jsii-docgen@^7.0.124:
-  version "7.0.124"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.124.tgz#a846c7af95b872c66ec367d20e04cb7d6759e3cf"
-  integrity sha512-aTT8w5uix6vRLiAM7V8TR85RPdFACdjyf7iutqrHDrpYOkT4G6iyrzlQTrGEHxWEbS6wDkykAoAS0iTN4p6JuA==
+jsii-docgen@^7.0.126:
+  version "7.0.126"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.126.tgz#1db28204a826ce7b97228433ece34b7dc65f07ef"
+  integrity sha512-GjuZfGtM99FGsmWz5kUci/zA09wHAPF/2cxfrHvofSahwpHhgJimnOxQOF7lKU/IkSTD3A3hJq1UydvXXTBuFw==
   dependencies:
     "@jsii/spec" "^1.70.0"
     case "^1.6.3"
@@ -4782,10 +4782,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.63.34:
-  version "0.63.34"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.63.34.tgz#2221c0a75bc2ecaaaf0abdf278c71c42244e8ec4"
-  integrity sha512-kaJRLS+xiMH8CD6Gh+Wczgpm3Z6zgc2kfdARPJudRQur/MWgvw4YXxffLmDejrkQhZ3B7jbJ4CVa3aLMfBLD8A==
+projen@^0.64.1:
+  version "0.64.1"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.64.1.tgz#6148aee0657c31f97e884a781e9c0f7c565abc69"
+  integrity sha512-fiAX1QwOcJlGdvXtzrx6ZMUKUAOf2/QleL+FsZCfJB20K2JO/q+3P0QGLW9spcHbJQ3xRqw35Wjr7JTVZaL8DA==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
@@ -6060,9 +6060,9 @@ wordwrap@^1.0.0:
   integrity sha512-gvVzJFlPycKc5dZN4yPkP8w7Dc37BtP1yczEneOb4uq34pXZcvrtRTmWV8W+Ume+XCxKgbjM+nevkyFPMybd4Q==
 
 workerpool@^6.2.1:
-  version "6.2.1"
-  resolved "https://registry.yarnpkg.com/workerpool/-/workerpool-6.2.1.tgz#46fc150c17d826b86a008e5a4508656777e9c343"
-  integrity sha512-ILEIE97kDZvF9Wb9f6h5aXK4swSlKGUcOEGiIYb2OOu/IrDU9iwj0fD//SsA6E5ibwJxpEvhullJY4Sl4GcpAw==
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/workerpool/-/workerpool-6.3.0.tgz#82f5e5e1fb01d48f0399fe52a117c8a15cd1b972"
+  integrity sha512-2rVusseHGwxEEESx/szO2SHfi982WQavL2YlWGHsZE2ynZ4gaHT7kmCXph9k9fUivKOwx7PBn6vn4nXUxxdKcw==
 
 wrap-ansi@^7.0.0:
   version "7.0.0"
