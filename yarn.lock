@@ -3555,10 +3555,10 @@ jsii-diff@^1.70.0:
     log4js "^6.7.0"
     yargs "^16.2.0"
 
-jsii-docgen@^7.0.140:
-  version "7.0.140"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.140.tgz#a8765038abb58308f21ae8f8533cdf4a9817c5ab"
-  integrity sha512-/99I7pE92kw/IjYEUeQvqHJ/I52G0KekeSYAeoiOaIieOQ2ZQBTparQvmJOrKgdRwd9d8wniWuYG/Qq9f1pRxA==
+jsii-docgen@^7.0.141:
+  version "7.0.141"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.141.tgz#9e6869f723f27b690470f91550eb7bfc8e5cbe30"
+  integrity sha512-5eTeYE7DthJo7ekW+5TmKKm9ZKxubq5S8VRJ0rnjT9r9eDbOiZIyqgHxAzbAkof76DilN13HJ2bGCswEamKIsw==
   dependencies:
     "@jsii/spec" "^1.70.0"
     case "^1.6.3"
@@ -3711,9 +3711,9 @@ jsonschema@^1.4.1:
   integrity sha512-S6cATIPVv1z0IlxdN+zUk5EPjkGCdnhN4wVSBlvoUO1tOLJootbo9CquNJmbIh4yikWHiUedhRYrNPn1arpEmQ==
 
 keyv@^4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/keyv/-/keyv-4.5.0.tgz#dbce9ade79610b6e641a9a65f2f6499ba06b9bc6"
-  integrity sha512-2YvuMsA+jnFGtBareKqgANOEKe1mk3HKiXu2fRmAfyxG0MJAywNhi5ttWA3PMjl4NmpyjZNbFifR2vNjW1znfA==
+  version "4.5.1"
+  resolved "https://registry.yarnpkg.com/keyv/-/keyv-4.5.1.tgz#9ef39afc091caea4aa4b216b0e114412a9396c3d"
+  integrity sha512-DONNzZ8b9FLIRIX8kF+JByejgBoGUD4msUvRlHnPMqTb49MwW3thKgB6yGsshzOLW0Bol6SGu5TysvSsM6apdA==
   dependencies:
     json-buffer "3.0.1"
 
@@ -4553,10 +4553,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.65.15:
-  version "0.65.15"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.65.15.tgz#21d830a2e2fbc98ef0f5e5b10a902d6c455b8868"
-  integrity sha512-tTvcch20D9ztXG/fnUhgEx3SwY8JqZnxSfVoZouQSGYIPJTJBri+wkJw0mXCxDdphvm52ezHu2X2R82GPsykmw==
+projen@^0.65.16:
+  version "0.65.16"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.65.16.tgz#cd12477f006a16ba84fb499f38e83766a1dac040"
+  integrity sha512-b6NY4/Y9HI4dYO07cvY2D4vPe5UbCKqifw+TJGJzkrfkrOo5lxGVfa6iLcjrbWWCl2irDjhzMWHBLq2VnrjfMA==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
