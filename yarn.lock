@@ -1128,10 +1128,10 @@ aws-lambda@^1.0.7:
     js-yaml "^3.14.1"
     watchpack "^2.0.0-beta.10"
 
-aws-sdk@^2.1256.0, aws-sdk@^2.814.0:
-  version "2.1256.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1256.0.tgz#4cac62e8bbd1f8a363cd506328103b3498bfa767"
-  integrity sha512-/Dh81PZdjqyZwA3BMBUO2PMUakv0hqjxCReE59sskIFdQJdSOW+26EQ4LcV07YP6umz3n5TKC28bEfx6l2kTJQ==
+aws-sdk@^2.1257.0, aws-sdk@^2.814.0:
+  version "2.1257.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1257.0.tgz#8ed8ca99f97dc642fce98dac7d5eb18e94ae9833"
+  integrity sha512-SNfKIVlJdLyBbUSGgvsBOuV4iOE1modoKOhnV/bIi2F7DJkq4SCPmrN1nwLNBnOQQvZRlPwFbHPVrJ3clTXLDQ==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -3562,10 +3562,10 @@ jsii-diff@^1.71.0:
     log4js "^6.7.0"
     yargs "^16.2.0"
 
-jsii-docgen@^7.0.152:
-  version "7.0.152"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.152.tgz#d0b91a5e899b7948eeff2a87dcbec62ec00b1d2e"
-  integrity sha512-dli5euA2fwmwKTsSYk2ZLYrSBMe/vNJQby7WKhq0QxnmeG5oyfnxZZYUkZGrQncBnvMJzzkj0lP7Rcv5xQfhaQ==
+jsii-docgen@^7.0.153:
+  version "7.0.153"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.153.tgz#cbd18a05d852369a2e2e887ada478e32e629abd6"
+  integrity sha512-YvK3DOCvCWcay6+6R5EkJiO7cmnAcIYkB0nPieSqitcS09vrdewmoin63hzTTYrhL1+YdH1trwFNO9tJx7bMwQ==
   dependencies:
     "@jsii/spec" "^1.71.0"
     case "^1.6.3"
@@ -4583,10 +4583,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.65.26:
-  version "0.65.26"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.65.26.tgz#845b61b6f827f5daae648d970d5ff001bae9d7e2"
-  integrity sha512-xtYD6rbSyP75NLFLcu91QhDRO2Ehvgn0KoJVv9mRsjPFnRr13OhXUc5e+gu30pdCz/Y13D9rFCLx1T9sS6x1Tg==
+projen@^0.65.27:
+  version "0.65.27"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.65.27.tgz#c570f00dd0fe891d09db43ba206b61bdecd63e93"
+  integrity sha512-tkylBpJvffZ5pD7b5voMuBTRImdB2gb1CRADd+WhA8UyoDlSkIQwpJVradxyF+JRIlQSEGmuN3MWViVrPDcMhg==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
