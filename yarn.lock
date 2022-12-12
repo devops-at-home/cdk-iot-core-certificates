@@ -3583,10 +3583,10 @@ jsii-diff@^1.72.0:
     log4js "^6.7.1"
     yargs "^16.2.0"
 
-jsii-docgen@^7.0.170:
-  version "7.0.170"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.170.tgz#cacaf4a86ebfe770ad888aec821a22679657a337"
-  integrity sha512-LcjTMyiJwkg2mKTIJAIPRUue6WW+qLVOQGe2VhXo0g7EmRag4aV6SJH4zSb62t5tj//Ktw/SfPNk2XherGJjYg==
+jsii-docgen@^7.0.171:
+  version "7.0.171"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.171.tgz#fabd2f5c076462f7d067e83be81fae916c2f7059"
+  integrity sha512-sLctEKyjTvW/CT722JeQjdFO5OfWjoWTq6beBgP304JJEPdTz8Y72xlwYIxqKgOVxULTDs57qw0p+dPxh6HVbQ==
   dependencies:
     "@jsii/spec" "^1.72.0"
     case "^1.6.3"
