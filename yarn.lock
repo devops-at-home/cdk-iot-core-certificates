@@ -1233,10 +1233,10 @@ aws-lambda@^1.0.7:
     js-yaml "^3.14.1"
     watchpack "^2.0.0-beta.10"
 
-aws-sdk@^2.1275.0, aws-sdk@^2.814.0:
-  version "2.1275.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1275.0.tgz#70e4798a92ec68a9f8bd3add60119d88759e9c5a"
-  integrity sha512-GP7oS0BTh012pAMnNSVVQQrhfubeLH2moLUQQiuk9cPrqQYeP74BU3nnALM30CoFNzX+DwLanOeFU+KMfUGLHg==
+aws-sdk@^2.1276.0, aws-sdk@^2.814.0:
+  version "2.1276.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1276.0.tgz#60d32305b687a1c8367370574d2b0d1c40d30e26"
+  integrity sha512-0TGPsW/uMQy0trfYZD+dvSQ9Bf8NmKK9ISj5xQJGopNt/Kxh0vLKBPy2mFmKdxeFtis6wn4c9uTp7/3p0ADa1w==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -1431,12 +1431,12 @@ cacache@^16.1.0:
     unique-filename "^2.0.0"
 
 cacache@^17.0.0:
-  version "17.0.3"
-  resolved "https://registry.yarnpkg.com/cacache/-/cacache-17.0.3.tgz#9ba14e0e50eca763ae7e2ee89036a948a13035ed"
-  integrity sha512-pwsIK/grdM0cHpfVaNFxMdzElBtLJGsVPE+JnxqXP1l40O01Z1mfDE8MbRTuwomGq/UwEtGisOylutOEVJxEqg==
+  version "17.0.4"
+  resolved "https://registry.yarnpkg.com/cacache/-/cacache-17.0.4.tgz#5023ed892ba8843e3b7361c26d0ada37e146290c"
+  integrity sha512-Z/nL3gU+zTUjz5pCA5vVjYM8pmaw2kxM7JEiE0fv3w77Wj+sFbi70CrBruUWH0uNcEdvLDixFpgA2JM4F4DBjA==
   dependencies:
     "@npmcli/fs" "^3.1.0"
-    fs-minipass "^2.1.0"
+    fs-minipass "^3.0.0"
     glob "^8.0.1"
     lru-cache "^7.7.1"
     minipass "^4.0.0"
@@ -2436,6 +2436,13 @@ fs-minipass@^2.0.0, fs-minipass@^2.1.0:
   integrity sha512-V/JgOLFCS+R6Vcq0slCuaeWEdNC3ouDlJMNIsacH2VtALiu9mV4LPrHc5cDl8k5aw6J8jwgWWpiTo5RYhmIzvg==
   dependencies:
     minipass "^3.0.0"
+
+fs-minipass@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/fs-minipass/-/fs-minipass-3.0.0.tgz#8e6ed2b4e1ba44077cae69971393068a1bbeeed6"
+  integrity sha512-EUojgQaSPy6sxcqcZgQv6TVF6jiKvurji3AxhAivs/Ep4O1UpS8TusaxpybfFHZ2skRhLqzk6WR8nqNYIMMDeA==
+  dependencies:
+    minipass "^4.0.0"
 
 fs.realpath@^1.0.0:
   version "1.0.0"
@@ -3583,10 +3590,10 @@ jsii-diff@^1.72.0:
     log4js "^6.7.1"
     yargs "^16.2.0"
 
-jsii-docgen@^7.0.174:
-  version "7.0.174"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.174.tgz#c6d2b1f16e676af2a52b374cfdd318b780e9f2d6"
-  integrity sha512-7SqGmF6/S1xMWuQz7NV4EWRqrKRS0Eox7Mz5yRnReNYE3WWM6eptFCjGeh3PM54rvTzKScat2veuL7F7XTEk1A==
+jsii-docgen@^7.0.175:
+  version "7.0.175"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-7.0.175.tgz#5768b975f6e7aafb7f6a1ca48e4db3ce1d0464e0"
+  integrity sha512-6GYzS94wLXjdjmZYOAQNSFZH2LFxE46TUmOPuyvDrK43e9usgyAz+v3qSXj9EN9SDzygPhiQsT1vwpC0+MOq1A==
   dependencies:
     "@jsii/spec" "^1.72.0"
     case "^1.6.3"
@@ -4611,10 +4618,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.65.60:
-  version "0.65.60"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.65.60.tgz#4d8b977a941bfe594c3a40c8b97aaa52d7709b0c"
-  integrity sha512-mUIhNLpyLOYvp5IajhlxQDIdGDpimPfygHw/1fv//E4Kng1xpBBkvPgbC2VUBEht3vBFvTUkgGmzbKEdpSeFvg==
+projen@^0.65.63:
+  version "0.65.63"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.65.63.tgz#d691405f3221223dba83cdd39bc66b3e73e69444"
+  integrity sha512-k37Q8biBIjaKOOPvOxUodCGz+3ysQxFndiSfJD1036UArOamDzGuVQkACeDPk8I3AiEECkhHcxp8iTs27LRnJA==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
