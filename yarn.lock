@@ -1234,10 +1234,10 @@ aws-lambda@^1.0.7:
     js-yaml "^3.14.1"
     watchpack "^2.0.0-beta.10"
 
-aws-sdk@^2.1305.0, aws-sdk@^2.814.0:
-  version "2.1305.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1305.0.tgz#787dc700f137fb2518995736b4de4fe5bd0c17d4"
-  integrity sha512-DbCZX0eKg/ZDZuTRsirWalx/9fOizIG/PocNWggwwSpmx9rB+MDSa2UX9KEt7vxAwesJotkKAY7ndGGLnUYMTA==
+aws-sdk@^2.1306.0, aws-sdk@^2.814.0:
+  version "2.1306.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1306.0.tgz#33a5f8d732c2bfb8bb0d8dd946163814f294242d"
+  integrity sha512-t3M04Nx+uHVYcRGZXoI0Dr24I722oslwkwGT/gFPR2+Aub5dQ88+BetCPBvg24sZDg2RNWNxepYk5YHuKV5Hrg==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -4191,9 +4191,9 @@ node-int64@^0.4.0:
   integrity sha512-O5lz91xSOeoXP6DulyHfllpq+Eg00MWitZIbtPfoSEvqIHdl5gfcY6hYzDWnj0qD5tz52PI08u9qUvSVeUBeHw==
 
 node-releases@^2.0.8:
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.8.tgz#0f349cdc8fcfa39a92ac0be9bc48b7706292b9ae"
-  integrity sha512-dFSmB8fFHEH/s81Xi+Y/15DQY6VHW81nXRj86EMSL3lmuTmK1e+aT4wrFCkTbm+gSwkw4KpX+rT/pMM2c1mF+A==
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-2.0.9.tgz#fe66405285382b0c4ac6bcfbfbe7e8a510650b4d"
+  integrity sha512-2xfmOrRkGogbTK9R6Leda0DGiXeY3p2NJpy4+gNCffdUvV6mdEJnaDEic1i3Ec2djAo8jWYoJMR5PB0MSMpxUA==
 
 nopt@^6.0.0:
   version "6.0.0"
@@ -4624,10 +4624,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.67.25:
-  version "0.67.25"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.67.25.tgz#4a5538f805f8de5d60c714ab913097abe436092e"
-  integrity sha512-2b2tBvFNW5v+qwVfXN/Jla0WsUEhsSEogOejlODS77/M2Jl5MkDofBFOZBZ7vWbXqHcT1zVSSB7tw5++as7X2A==
+projen@^0.67.29:
+  version "0.67.29"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.67.29.tgz#981beec8db2658ab0e027a94c856aff6039cb016"
+  integrity sha512-6GWMdfkxjEwQPCTB+YgWl2nZMzfbYbmlRkxM9oLdZetpYJwg3T1fokwrnSWxYVOXQXdUoXl0LjkWJJO08+/5HQ==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
