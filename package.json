@@ -45,7 +45,7 @@
     "jest-junit": "^13",
     "jsii": "^1.74.0",
     "jsii-diff": "^1.74.0",
-    "jsii-docgen": "^7.0.231",
+    "jsii-docgen": "^7.0.232",
     "jsii-pacmak": "^1.74.0",
     "npm-check-updates": "^16",
     "prettier": "^2.8.4",
