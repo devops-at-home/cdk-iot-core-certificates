@@ -309,7 +309,7 @@ Object {
     },
     "ThingWithCertparamStoreCertPem15876E53": Object {
       "Properties": Object {
-        "Name": "paramPrefix/thingName/certPem",
+        "Name": "/paramPrefix/thingName/certPem",
         "Type": "String",
         "Value": Object {
           "Fn::GetAtt": Array [
@@ -322,7 +322,7 @@ Object {
     },
     "ThingWithCertparamStorePrivKey2E5E90A6": Object {
       "Properties": Object {
-        "Name": "paramPrefix/thingName/privKey",
+        "Name": "/paramPrefix/thingName/privKey",
         "Type": "String",
         "Value": Object {
           "Fn::GetAtt": Array [

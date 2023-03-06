@@ -60,7 +60,7 @@ export class ThingWithCert extends Construct {
 
         lambdaCustomResource.addPropertyOverride('ThingName', thingName);
 
-        let paramStorePath = paramPrefix ? `${paramPrefix}/${thingName}` : thingName;
+        const paramStorePath = getParamStorePath(thingName, paramPrefix);
 
         if (saveToParamStore) {
             new CfnParameter(this, 'paramStoreCertPem', {
@@ -82,3 +82,15 @@ export class ThingWithCert extends Construct {
         this.privKey = lambdaCustomResource.getAtt('privKey').toString();
     }
 }
+
+export const getParamStorePath = (thingName: string, paramPrefix?: string) => {
+    if (thingName.charAt(0) === '/') {
+        throw new Error("thingName cannot start with '/'");
+    }
+
+    if (paramPrefix && paramPrefix.charAt(0) === '/') {
+        throw new Error("paramPrefix cannot start with '/'");
+    }
+
+    return paramPrefix ? `/${paramPrefix}/${thingName}` : `/${thingName}`;
+};
