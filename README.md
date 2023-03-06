@@ -20,7 +20,7 @@ This package has peer dependencies, which need to be installed along in the expe
 
 For TypeScript/NodeJS, add these to your `dependencies` in `package.json`:
 
-- cdk-iot-core-certificates
+-   cdk-iot-core-certificates
 
 ## Usage
 
@@ -29,10 +29,11 @@ import { ThingWithCert } from 'cdk-iot-core-certificates';
 
 // Creates new AWS IoT Thing called thingName
 // Saves certs to /devices/thingName/certPem and /devices/thingName/privKey
+// thingName and paramPrefix cannot start with '/'
 new ThingWithCert(stack, 'ThingWithCert', {
-  thingName: 'thingName',
-  saveToParamStore: true,
-  paramPrefix: '/devices',
+    thingName: 'thingName',
+    saveToParamStore: true,
+    paramPrefix: 'devices',
 });
 ```
 
