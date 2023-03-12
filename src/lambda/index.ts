@@ -24,9 +24,10 @@ export const handler = async (event: Event): Promise<Success | Failure> => {
                 RequestId,
                 StackId,
                 Data: {
+                    thingArn,
+                    certId,
                     certPem,
                     privKey,
-                    certId,
                 },
             };
         } else if (event.RequestType === 'Delete') {
