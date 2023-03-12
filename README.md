@@ -30,10 +30,26 @@ import { ThingWithCert } from 'cdk-iot-core-certificates';
 // Creates new AWS IoT Thing called thingName
 // Saves certs to /devices/thingName/certPem and /devices/thingName/privKey
 // thingName and paramPrefix cannot start with '/'
-new ThingWithCert(stack, 'ThingWithCert', {
-    thingName: 'thingName',
+const { thingArn, certId, certPem, privKey } = new ThingWithCert(this, 'ThingWithCert', {
+    thingName: 'integrationTest',
     saveToParamStore: true,
     paramPrefix: 'devices',
+});
+
+new CfnOutput(this, 'Output-ThingArn', {
+    value: thingArn,
+});
+
+new CfnOutput(this, 'Output-CertId', {
+    value: certId,
+});
+
+new CfnOutput(this, 'Output-CertPem', {
+    value: certPem,
+});
+
+new CfnOutput(this, 'Output-PrivKey', {
+    value: privKey,
 });
 ```
 
