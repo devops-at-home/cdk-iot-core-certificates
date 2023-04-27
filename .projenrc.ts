@@ -28,8 +28,14 @@ const project = new awscdk.AwsCdkConstructLibrary({
         allowedUsernames: ['devops-at-home'],
     },
     majorVersion: 1,
+    publishToPypi: {
+        distName: 'devops-at-home.cdk-iot-core-certificates',
+        module: 'devops_at_home_cdk_iot_core_certficates',
+    },
 });
 
 project.jest!.addTestMatch('**/?(*.)@(spec|test).[tj]s?(x)');
+
+project.tasks.tryFind('package:python')?.prependExec('pip3 install packaging');
 
 project.synth();
