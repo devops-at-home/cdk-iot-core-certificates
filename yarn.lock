@@ -775,9 +775,9 @@
     which "^3.0.0"
 
 "@npmcli/run-script@^6.0.0":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@npmcli/run-script/-/run-script-6.0.1.tgz#a94404783d9afaff62decb71944435d0d8a29f8e"
-  integrity sha512-Yi04ZSold8jcbBJD/ahKMJSQCQifH8DAbMwkBvoLaTpGFxzHC3B/5ZyoVR69q/4xedz84tvi9DJOJjNe17h+LA==
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/@npmcli/run-script/-/run-script-6.0.2.tgz#a25452d45ee7f7fb8c16dfaf9624423c0c0eb885"
+  integrity sha512-NCcr1uQo1k5U+SYlnIrbAh3cxy+OQT1VtqiAbxdymSlptbzBb62AjH2xXgjNCoP073hoa1CfCAcwoZ8k96C4nA==
   dependencies:
     "@npmcli/node-gyp" "^3.0.0"
     "@npmcli/promise-spawn" "^6.0.0"
@@ -1010,14 +1010,14 @@
   integrity sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==
 
 "@types/node@*":
-  version "20.1.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.1.0.tgz#258805edc37c327cf706e64c6957f241ca4c4c20"
-  integrity sha512-O+z53uwx64xY7D6roOi4+jApDGFg0qn6WHcxe5QeqjMaTezBO/mxdfFXIVAVVyNWKx84OmPB3L8kbVYOTeN34A==
+  version "20.1.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.1.1.tgz#afc492e8dbe7f672dd3a13674823522b467a45ad"
+  integrity sha512-uKBEevTNb+l6/aCQaKVnUModfEMjAl98lw2Si9P5y4hLu9tm6AlX2ZIoXZX6Wh9lJueYPrGPKk5WMCNHg/u6/A==
 
 "@types/node@^16":
-  version "16.18.26"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.26.tgz#a18b88726a67bc6a8a5bdac9a40c093ecb03ccd0"
-  integrity sha512-pCNBzNQqCXE4A6FWDmrn/o1Qu+qBf8tnorBlNoPNSBQJF+jXzvTKNI/aMiE+hGJbK5sDAD65g7OS/YwSHIEJdw==
+  version "16.18.27"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.27.tgz#d515767a4a7bc44eaec336ac7ff1bde338a17704"
+  integrity sha512-GFfndd/RINWD19W+xNJ9Qh/sOZ5ieTiOSagA86ER/12i/l+MEnQxsbldGRF23azWjRfe7zUlAldyrwN84a1E5w==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -1282,10 +1282,10 @@ aws-lambda@^1.0.7:
     js-yaml "^3.14.1"
     watchpack "^2.0.0-beta.10"
 
-aws-sdk@^2.1373.0, aws-sdk@^2.814.0:
-  version "2.1373.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1373.0.tgz#e1e7d5b01498de48dd0cd8c7849c1766c115f13d"
-  integrity sha512-3/P79VU2VVeiof25bn8TSepEhWCRhwuQGYoEWX/2pApQRJAY+w/3JFVKHjbAe3NYEEBNeiAE6PQ9DqWz5Pp+Lw==
+aws-sdk@^2.1374.0, aws-sdk@^2.814.0:
+  version "2.1374.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1374.0.tgz#f915dd6a946cab810d1bd46ca14892e985ce69ab"
+  integrity sha512-Q7TExvBskRM23GfE1iy0GRxpUF+d9LY7ggmdHvL+2gX/QTzxSYaHHRPa8MNzFtzZLz+BDcDIgAcMjYKsrm18Rw==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -2168,9 +2168,9 @@ eastasianwidth@^0.2.0:
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
 electron-to-chromium@^1.4.284:
-  version "1.4.385"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.385.tgz#1afd8d6280d510145148777b899ff481c65531ff"
-  integrity sha512-L9zlje9bIw0h+CwPQumiuVlfMcV4boxRjFIWDcLfFqTZNbkwOExBzfmswytHawObQX4OUhtNv8gIiB21kOurIg==
+  version "1.4.386"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.386.tgz#49d5ab14b849fa19b1d60c67b0a56e504990d1c7"
+  integrity sha512-w0VD4WR225nuNsz6FokDaqugxzue6iUVBo8QfUrl2Y6nWHxtBUhjWDnUaG/1v5oWeFPLMJAQk3zKHTHW/P8+Og==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -4732,10 +4732,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.71.46:
-  version "0.71.46"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.71.46.tgz#e4708b7943b897e89c00a6eabd1bd60b3a9f0dc0"
-  integrity sha512-8HyyTkb28pveTojJnVi6NKFaiKtcKC77Vnb+R4jsflAYAToHoKoM97WrTGxZeLaUeSNuJt8ICBdt3bJIbEye1Q==
+projen@^0.71.47:
+  version "0.71.47"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.71.47.tgz#e46184474b4937f5e568efe97c31208307f98491"
+  integrity sha512-jNYaVXmLVOQI6OPohVQp05ELo9cimFv0b8KsmVKKH6xySlWqqz8tZUfbWcKaDeX8tFFjaEhpBS7lo7Lvsf3uEA==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
