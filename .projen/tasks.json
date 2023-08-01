@@ -272,7 +272,7 @@
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade"
+          "exec": "yarn upgrade @types/aws-lambda @types/jest @types/node aws-cdk-lib aws-lambda aws-sdk constructs esbuild jest-junit jest jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii npm-check-updates prettier projen standard-version ts-jest ts-node typescript aws-cdk-lib constructs"
         },
         {
           "exec": "npx projen"
