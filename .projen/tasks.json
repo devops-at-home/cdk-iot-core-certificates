@@ -254,25 +254,13 @@
           "exec": "yarn upgrade npm-check-updates"
         },
         {
-          "exec": "npm-check-updates --dep dev --upgrade --target=minor --reject='aws-cdk-lib,constructs,jsii-rosetta,jsii'"
-        },
-        {
-          "exec": "npm-check-updates --dep bundle --upgrade --target=minor --reject='aws-cdk-lib,constructs,jsii-rosetta,jsii'"
-        },
-        {
-          "exec": "npm-check-updates --dep peer --upgrade --target=minor --reject='aws-cdk-lib,constructs,jsii-rosetta,jsii'"
-        },
-        {
-          "exec": "npm-check-updates --dep prod --upgrade --target=minor --reject='aws-cdk-lib,constructs,jsii-rosetta,jsii'"
-        },
-        {
-          "exec": "npm-check-updates --dep optional --upgrade --target=minor --reject='aws-cdk-lib,constructs,jsii-rosetta,jsii'"
+          "exec": "npm-check-updates --upgrade --target=minor --filter=@types/aws-lambda,@types/jest,@types/node,aws-lambda,aws-sdk,esbuild,jest-junit,jest,jsii-diff,jsii-docgen,jsii-pacmak,npm-check-updates,prettier,projen,standard-version,ts-jest,ts-node,typescript,aws-cdk-lib,constructs"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade @types/aws-lambda @types/jest @types/node aws-cdk-lib aws-lambda aws-sdk constructs esbuild jest-junit jest jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii npm-check-updates prettier projen standard-version ts-jest ts-node typescript aws-cdk-lib constructs"
+          "exec": "yarn upgrade @types/aws-lambda @types/jest @types/node aws-lambda aws-sdk esbuild jest-junit jest jsii-diff jsii-docgen jsii-pacmak npm-check-updates prettier projen standard-version ts-jest ts-node typescript aws-cdk-lib constructs"
         },
         {
           "exec": "npx projen"
