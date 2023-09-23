@@ -33,12 +33,12 @@
     "organization": false
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.121",
+    "@types/aws-lambda": "^8.10.122",
     "@types/jest": "^27",
     "@types/node": "^16",
     "aws-cdk-lib": "2.43.1",
     "aws-lambda": "^1.0.7",
-    "aws-sdk": "^2.1462.0",
+    "aws-sdk": "^2.1463.0",
     "constructs": "10.0.5",
     "esbuild": "^0.19.3",
     "jest": "^27",
@@ -50,7 +50,7 @@
     "jsii-rosetta": "1.x",
     "npm-check-updates": "^16",
     "prettier": "^2.8.8",
-    "projen": "^0.73.28",
+    "projen": "^0.73.29",
     "standard-version": "^9",
     "ts-jest": "^27",
     "ts-node": "^10.9.1",
