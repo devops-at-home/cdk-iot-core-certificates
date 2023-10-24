@@ -1295,10 +1295,10 @@ aws-lambda@^1.0.7:
     js-yaml "^3.14.1"
     watchpack "^2.0.0-beta.10"
 
-aws-sdk@^2.1478.0, aws-sdk@^2.814.0:
-  version "2.1478.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1478.0.tgz#30edc3a34fb0c40f30e5512e5e02c630ef849022"
-  integrity sha512-F+Ud9FxMD4rwvGbEXn7qc25Q19N4p+9klRjiH1llFLYssPw6TRtY464Cry/jG4OzuYkE/DsnhcwVFEJjGvMmuQ==
+aws-sdk@^2.1479.0, aws-sdk@^2.814.0:
+  version "2.1479.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1479.0.tgz#3ba32633455eb1d3c8295613b7c4c23fede9dfd6"
+  integrity sha512-LSTq1l63soAfHjsHYkuFln3ERuImKU4RpkzBzruFkL2DDwd3+CtYcjQ6PbuBjZcQ+XTY3jM8DoxoXhQD4L+YZw==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -2162,9 +2162,9 @@ eastasianwidth@^0.2.0:
   integrity sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==
 
 electron-to-chromium@^1.4.535:
-  version "1.4.563"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.563.tgz#dabb424202754c1fed2d2938ff564b23d3bbf0d3"
-  integrity sha512-dg5gj5qOgfZNkPNeyKBZQAQitIQ/xwfIDmEQJHCbXaD9ebTZxwJXUsDYcBlAvZGZLi+/354l35J1wkmP6CqYaw==
+  version "1.4.565"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.565.tgz#205f3746a759ec3c43bce98b9eef5445f2721ea9"
+  integrity sha512-XbMoT6yIvg2xzcbs5hCADi0dXBh4//En3oFXmtPX+jiyyiCTiM9DGFT2SLottjpEs9Z8Mh8SqahbR96MaHfuSg==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -4708,10 +4708,10 @@ progress@^2.0.3:
   resolved "https://registry.yarnpkg.com/progress/-/progress-2.0.3.tgz#7e8cf8d8f5b8f239c1bc68beb4eb78567d572ef8"
   integrity sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==
 
-projen@^0.76.1:
-  version "0.76.1"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.76.1.tgz#a87164616368dee2defc19ae498e3569231e5eb9"
-  integrity sha512-50IvSOZ+23iT0iQ0MAp3jtzDf5ZfK+9hjVqfP16l6nBownm76h8ImSLeIdMyGhACL7BohhS5x9xbtN+VIljblA==
+projen@^0.76.3:
+  version "0.76.3"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.76.3.tgz#240eb50400b2c9223f9669d1aad0c46fbc10ee50"
+  integrity sha512-EsoPqnLm70Vkreh1qDJELVyn7zV4E23N6i59a73F9siKrKxp1RC8rubjMKsvCWxSaVUdXKlnIpzQIOi7fZ5mOQ==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
