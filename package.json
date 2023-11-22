@@ -33,14 +33,14 @@
     "organization": false
   },
   "devDependencies": {
-    "@types/aws-lambda": "^8.10.126",
+    "@types/aws-lambda": "^8.10.127",
     "@types/jest": "^27",
     "@types/node": "^16",
     "aws-cdk-lib": "2.43.1",
     "aws-lambda": "^1.0.7",
-    "aws-sdk": "^2.1500.0",
+    "aws-sdk": "^2.1501.0",
     "constructs": "10.0.5",
-    "esbuild": "^0.19.6",
+    "esbuild": "^0.19.7",
     "jest": "^27",
     "jest-junit": "^15",
     "jsii": "1.x",
