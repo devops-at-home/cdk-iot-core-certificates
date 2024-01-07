@@ -24,3 +24,4 @@ dist
 tsconfig.tsbuildinfo
 !.jsii
 /.gitattributes
+/.projenrc.ts
