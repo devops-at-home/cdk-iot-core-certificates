@@ -869,16 +869,16 @@
   integrity sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==
 
 "@types/node@*":
-  version "20.11.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.11.0.tgz#8e0b99e70c0c1ade1a86c4a282f7b7ef87c9552f"
-  integrity sha512-o9bjXmDNcF7GbM4CNQpmi+TutCgap/K3w1JyKgxAjqx41zp9qlIAVFi0IhCNsJcXolEqLWhbFbEeL0PvYm4pcQ==
+  version "20.11.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.11.3.tgz#ac29fba7aeadc74046b02e50758156f4850f1296"
+  integrity sha512-nrlmbvGPNGaj84IJZXMPhQuCMEVTT/hXZMJJG/aIqVL9fKxqk814sGGtJA4GI6hpJSLQjpi6cn0Qx9eOf9SDVg==
   dependencies:
     undici-types "~5.26.4"
 
 "@types/node@^16":
-  version "16.18.70"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.70.tgz#d4c819be1e9f8b69a794d6f2fd929d9ff76f6d4b"
-  integrity sha512-8eIk20G5VVVQNZNouHjLA2b8utE2NvGybLjMaF4lyhA9uhGwnmXF8o+icdXKGSQSNANJewXva/sFUoZLwAaYAg==
+  version "16.18.71"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.71.tgz#305a955ab99353d4b8a9e9b6b6682ed6cbc186cc"
+  integrity sha512-ARO+458bNJQeNEFuPyT6W+q9ULotmsQzhV3XABsFSxEvRMUYENcBsNAHWYPlahU+UHa5gCVwyKT1Z3f1Wwr26Q==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.4"
@@ -1780,9 +1780,9 @@ dotgitignore@^2.1.0:
     minimatch "^3.0.4"
 
 electron-to-chromium@^1.4.601:
-  version "1.4.630"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.630.tgz#1d9f4169653784997bec98975e11a2c05214ce39"
-  integrity sha512-osHqhtjojpCsACVnuD11xO5g9xaCyw7Qqn/C2KParkMv42i8jrJJgx3g7mkHfpxwhy9MnOJr8+pKOdZ7qzgizg==
+  version "1.4.631"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.631.tgz#db2de2e1ce90fc1785b5c3f49fde594413270e05"
+  integrity sha512-g73CJB/rMPjdxpiNJYmV1homV7mLVUNe/R0z/HhqMfpjkt58FpYmkTjbtuv3zymdbTTJ+VOEqe1c+lkTjSOhmQ==
 
 emittery@^0.8.1:
   version "0.8.1"
