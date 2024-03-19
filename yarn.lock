@@ -847,9 +847,9 @@
   integrity sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==
 
 "@types/node@*":
-  version "20.11.28"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.11.28.tgz#4fd5b2daff2e580c12316e457473d68f15ee6f66"
-  integrity sha512-M/GPWVS2wLkSkNHVeLkrF2fD5Lx5UC4PxA0uZcKc6QqbIQUJyW1jVjueJYi1z8n0I5PxYrtpnPnWglE+y9A0KA==
+  version "20.11.29"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.11.29.tgz#431253cede34f392d6aaf7acad427b9c23aa60f6"
+  integrity sha512-P99thMkD/1YkCvAtOd6/zGedKNA0p2fj4ZpjCzcNiSCBWgm3cNRTBfa/qjFnsKkkojxu4vVLtWpesnZ9+ap+gA==
   dependencies:
     undici-types "~5.26.4"
 
@@ -1061,10 +1061,10 @@ aws-lambda@^1.0.7:
     js-yaml "^3.14.1"
     watchpack "^2.0.0-beta.10"
 
-aws-sdk@^2.1579.0, aws-sdk@^2.814.0:
-  version "2.1579.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1579.0.tgz#7114c06b3c2a60fc4c47eff37397f96679ccd3ec"
-  integrity sha512-TYv/bK2kVT/dfrpjAPL6sEhku4uH9EB18gRa6p9gi0fPtmhe49HrYoN2xmPNSqLPj4/CtSXmZhg91Ny1DhG8/Q==
+aws-sdk@^2.1580.0, aws-sdk@^2.814.0:
+  version "2.1580.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1580.0.tgz#c3390205c711a53a14054a9307ab7b42cf0ba40b"
+  integrity sha512-jR9EWyo1UY6QrYs+jhXCpqxBYXU6QYmqNejpsPgU5OzAWxUgalbXfQPAaw0A/DBxXU99qHO+j6RUYof82veiKw==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -1762,9 +1762,9 @@ dotgitignore@^2.1.0:
     minimatch "^3.0.4"
 
 electron-to-chromium@^1.4.668:
-  version "1.4.708"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.708.tgz#d54d3b47cb44ae6b190067439c42135456907893"
-  integrity sha512-iWgEEvREL4GTXXHKohhh33+6Y8XkPI5eHihDmm8zUk5Zo7HICEW+wI/j5kJ2tbuNUCXJ/sNXa03ajW635DiJXA==
+  version "1.4.710"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.710.tgz#d0ec4ea8a97df4c5eaeb8c69d45bf81f248b3855"
+  integrity sha512-w+9yAVHoHhysCa+gln7AzbO9CdjFcL/wN/5dd+XW/Msl2d/4+WisEaCF1nty0xbAKaxdaJfgLB2296U7zZB7BA==
 
 emittery@^0.8.1:
   version "0.8.1"
@@ -3616,10 +3616,10 @@ process-nextick-args@~2.0.0:
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
   integrity sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
 
-projen@^0.80.10:
-  version "0.80.10"
-  resolved "https://registry.yarnpkg.com/projen/-/projen-0.80.10.tgz#7de0acc8d884d37178f53604f5290c240f616587"
-  integrity sha512-dwXYGZS0xfTXC2ZKS8AbrGOs3x2s+p1NwAK+iID0l7/eM171RL4z90Tr6xZqSzQuVDEiG7W2uoL8XjYdXVkkpw==
+projen@^0.80.11:
+  version "0.80.11"
+  resolved "https://registry.yarnpkg.com/projen/-/projen-0.80.11.tgz#eeccb8fae2be77dda803e0cda879405f83d3f437"
+  integrity sha512-ss5sN6RTCOGwaXbrAcxXqpxi0gjjSOXk4SArUGLy1Weux9mRFuPhw0GLRtPxRUlbEoa3orx6iQAQBHSHQd9H1A==
   dependencies:
     "@iarna/toml" "^2.2.5"
     case "^1.6.3"
