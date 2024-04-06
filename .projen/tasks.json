@@ -251,7 +251,7 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@types/aws-lambda,aws-lambda,aws-sdk,esbuild,jsii-diff,jsii-docgen,jsii-pacmak,jsii-rosetta,jsii,prettier,projen,ts-node,typescript"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@types/aws-lambda,aws-lambda,aws-sdk,esbuild,jsii-diff,jsii-docgen,jsii-pacmak,prettier,projen,ts-node,typescript"
         },
         {
           "exec": "yarn install --check-files"
